@@ -1,3 +1,4 @@
+import 'package:adopet/screens/favorites.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {
@@ -253,20 +254,6 @@ class HomeScreen extends StatelessWidget {
         ),
       ],
     );
-  }
-}
-
-class Favoritos extends StatefulWidget {
-  const Favoritos({super.key});
-
-  @override
-  State<Favoritos> createState() => _Favoritos();
-}
-
-class _Favoritos extends State<Favoritos> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(color: const Color.fromARGB(255, 255, 43, 6));
   }
 }
 
