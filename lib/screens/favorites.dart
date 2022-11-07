@@ -47,7 +47,7 @@ class _Favoritos extends State<Favoritos> {
                   style: ElevatedButton.styleFrom(
                     shape: const CircleBorder(),
                     backgroundColor: Colors.white,
-                    padding: const EdgeInsets.all(24),
+                    padding: const EdgeInsets.all(16),
                   ),
                   child: const Center(
                     child: Icon(
