@@ -1,3 +1,4 @@
+import 'package:adopet/screens/favorites.dart';
 import 'package:adopet/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const MainScreen(),
+      home: const Favoritos(),
     );
   }
 }

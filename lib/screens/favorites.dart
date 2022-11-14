@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_const
+
 import 'package:flutter/material.dart';
 
 class Favoritos extends StatefulWidget {
@@ -18,28 +20,86 @@ class _Favoritos extends State<Favoritos> {
           borderRadius: BorderRadius.circular(24),
         ),
         child: SizedBox(
-          height: MediaQuery.of(context).size.height / 1,
+          height: MediaQuery.of(context).size.height / 3,
           child: Column(
             children: [
               Stack(
                 children: [
-                  Ink.image(
-                    image: const NetworkImage(
-                      'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1327&q=80',
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width,
+                    height: 298,
+                    child: const Image(
+                      image: AssetImage('images/cat.png'),
+                      fit: BoxFit.cover,
                     ),
-                    height: 240,
-                    fit: BoxFit.cover,
                   ),
-                  const Positioned(
-                    bottom: 16,
-                    right: 16,
-                    left: 16,
-                    child: Text(
-                      'Cats rule the world!',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 24,
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 218,
+                    ),
+                    child: Container(
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(15)),
+                        color: Color(0XFFF7B803),
+                      ),
+                      height: 80,
+                      width: MediaQuery.of(context).size.width,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 20, right: 20),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  'Gatito',
+                                  style: TextStyle(
+                                    fontFamily: 'AoboshiOne',
+                                    color: Colors.white,
+                                    fontSize: 30,
+                                  ),
+                                  textAlign: TextAlign.start,
+                                ),
+                                const SizedBox(
+                                  height: 1,
+                                ),
+                                Row(
+                                  children: const [
+                                    Icon(
+                                      Icons.location_pin,
+                                      color: Color(0xFF5AA9EF),
+                                    ),
+                                    Text(
+                                      'Americana',
+                                      style: TextStyle(
+                                        color: Color(0xFF0074FC),
+                                        fontFamily: 'AoboshiOne',
+                                        fontSize: 18,
+                                      ),
+                                      textAlign: TextAlign.start,
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                shape: const CircleBorder(),
+                                backgroundColor: Colors.white,
+                                padding: const EdgeInsets.all(8.3),
+                              ),
+                              onPressed: () {},
+                              child: const CircleAvatar(
+                                radius: 30,
+                                backgroundImage: AssetImage(
+                                  './images/sandro.png',
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
