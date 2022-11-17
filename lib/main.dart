@@ -1,5 +1,4 @@
-import 'package:adopet/screens/favorites.dart';
-import 'package:adopet/screens/home_screen.dart';
+import 'package:adopet/screens/animal_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -31,7 +30,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const Favoritos(),
+      home: const AnimalScreen(),
     );
   }
 }
