@@ -1,10 +1,199 @@
+//import 'package:cloud_firestore/cloud_firestore.dart';
+//import 'package:adopet/model/user_model.dart';
+import 'package:adopet/pages/home_screen.dart';
+//import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+//import 'package:fluttertoast/fluttertoast.dart';
+import 'package:adopet/screens/login_screen.dart';
 
-class RegisterScreen extends StatelessWidget {
+class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
 
   @override
+  _RegistrationScreenState createState() => _RegistrationScreenState();
+}
+
+class _RegistrationScreenState extends State<RegisterScreen> {
+  //final _auth = FirebaseAuth.instance;
+
+  // string for displaying the error Message
+  String? errorMessage;
+
+  // our form key
+  final _formKey = GlobalKey<FormState>();
+  // editing Controller
+  final NameEditingController = new TextEditingController();
+  final secondNameEditingController = new TextEditingController();
+  final emailEditingController = new TextEditingController();
+  final passwordEditingController = new TextEditingController();
+  final confirmPasswordEditingController = new TextEditingController();
+
+  @override
   Widget build(BuildContext context) {
+    final NameField = TextFormField(
+      autofocus: false,
+      controller: NameEditingController,
+      keyboardType: TextInputType.name,
+      validator: (value) {
+        RegExp regex = new RegExp(r'^.{3,}$');
+        if (value!.isEmpty) {
+          return ("Name cannot be Empty");
+        }
+        if (!regex.hasMatch(value)) {
+          return ("Enter Valid name(Min. 3 Character)");
+        }
+        return null;
+      },
+      onSaved: (value) {
+        NameEditingController.text = value!;
+      },
+      textInputAction: TextInputAction.next,
+      decoration: InputDecoration(
+        filled: true,
+        fillColor: const Color.fromARGB(255, 237, 238, 237),
+        prefixIcon: Icon(Icons.account_circle),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 50),
+        hintText: "Name",
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
+      ),
+    );
+
+    final emailField = TextFormField(
+      autofocus: false,
+      controller: emailEditingController,
+      keyboardType: TextInputType.emailAddress,
+      validator: (value) {
+        if (value!.isEmpty) {
+          return ("Please Enter Your Email");
+        }
+        // reg expression for email validation
+        if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]").hasMatch(value)) {
+          return ("Please Enter a valid email");
+        }
+        return null;
+      },
+      onSaved: (value) {
+        emailEditingController.text = value!;
+      },
+      textInputAction: TextInputAction.next,
+      decoration: InputDecoration(
+        filled: true,
+        fillColor: const Color.fromARGB(255, 237, 238, 237),
+        prefixIcon: Icon(Icons.mail),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 50),
+        hintText: "Email",
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
+      ),
+    );
+
+    final passwordField = TextFormField(
+      autofocus: false,
+      controller: passwordEditingController,
+      obscureText: true,
+      validator: (value) {
+        RegExp regex = new RegExp(r'^.{6,}$');
+        if (value!.isEmpty) {
+          return ("Password is required for login");
+        }
+        if (!regex.hasMatch(value)) {
+          return ("Enter Valid Password(Min. 6 Character)");
+        }
+      },
+      onSaved: (value) {
+        passwordEditingController.text = value!;
+      },
+      textInputAction: TextInputAction.next,
+      decoration: InputDecoration(
+        filled: true,
+        fillColor: const Color.fromARGB(255, 237, 238, 237),
+        prefixIcon: Icon(Icons.vpn_key),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 50),
+        hintText: "Password",
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
+      ),
+    );
+
+    final confirmPasswordField = TextFormField(
+      autofocus: false,
+      controller: confirmPasswordEditingController,
+      obscureText: true,
+      validator: (value) {
+        if (confirmPasswordEditingController.text !=
+            passwordEditingController.text) {
+          return "Password don't match";
+        }
+        return null;
+      },
+      onSaved: (value) {
+        confirmPasswordEditingController.text = value!;
+      },
+      textInputAction: TextInputAction.done,
+      decoration: InputDecoration(
+        filled: true,
+        fillColor: const Color.fromARGB(255, 237, 238, 237),
+        prefixIcon: Icon(Icons.vpn_key),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 50),
+        hintText: "Confirm Password",
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
+      ),
+    );
+
+    //signup button
+    final signUpButton = Material(
+      elevation: 5,
+      borderRadius: BorderRadius.circular(15),
+      color: Color(0xFF0074FC),
+      child: MaterialButton(
+          padding: EdgeInsets.symmetric(horizontal: 100, vertical: 23),
+          minWidth: MediaQuery.of(context).size.width,
+          onPressed: () {
+            //signUp(emailEditingController.text, passwordEditingController.text);
+          },
+          child: Text(
+            "Cadastrar",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                fontSize: 20,
+                color: Colors.white,
+                fontFamily: 'AoboshiOne',
+                fontWeight: FontWeight.bold),
+          )),
+    );
+
+    final cancelButton = Material(
+      elevation: 5,
+      borderRadius: BorderRadius.circular(15),
+      color: Color(0xFFF31717),
+      child: MaterialButton(
+          padding: EdgeInsets.symmetric(horizontal: 100, vertical: 23),
+          minWidth: MediaQuery.of(context).size.width,
+          onPressed: () {
+            () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const LoginScreen(),
+                  ),
+                );
+          },
+          child: Text(
+            "Voltar",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                fontSize: 20,
+                color: Colors.white,
+                fontFamily: 'AoboshiOne',
+                fontWeight: FontWeight.bold),
+          )),
+    );
+
     return Scaffold(
       body: Column(
         children: [
@@ -52,13 +241,7 @@ class RegisterScreen extends StatelessWidget {
                 const SizedBox(
                   height: 06,
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 237, 238, 237),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  height: 58,
-                ),
+                NameField,
               ],
             ),
           ),
@@ -82,13 +265,7 @@ class RegisterScreen extends StatelessWidget {
                 const SizedBox(
                   height: 06,
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 237, 238, 237),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  height: 58,
-                ),
+                emailField,
               ],
             ),
           ),
@@ -112,13 +289,7 @@ class RegisterScreen extends StatelessWidget {
                 const SizedBox(
                   height: 06,
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 237, 238, 237),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  height: 58,
-                ),
+                passwordField,
               ],
             ),
           ),
@@ -142,20 +313,23 @@ class RegisterScreen extends StatelessWidget {
                 const SizedBox(
                   height: 06,
                 ),
-                Container(
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 237, 238, 237),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  height: 58,
-                ),
+                confirmPasswordField,
               ],
             ),
           ),
           const SizedBox(
             height: 21,
           ),
-          GestureDetector(
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                signUpButton,
+              ],
+            ),
+          ),
+          /*GestureDetector(
             child: Container(
               padding:
                   const EdgeInsets.symmetric(horizontal: 100, vertical: 15),
@@ -179,11 +353,8 @@ class RegisterScreen extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-          const SizedBox(
-            height: 14,
-          ),
-          GestureDetector(
+          ),*/
+          /*GestureDetector(
             child: Container(
               padding:
                   const EdgeInsets.symmetric(horizontal: 100, vertical: 15),
@@ -205,7 +376,16 @@ class RegisterScreen extends StatelessWidget {
                 ),
               ),
             ),
-          ),
+          ),*/
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                cancelButton,
+              ],
+            ),
+          )
         ],
       ),
     );

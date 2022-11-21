@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "745818239565",
+    "project_id": "adopet-5c675",
+    "storage_bucket": "adopet-5c675.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:745818239565:android:6fb89f5b37d82c955de204",
+        "android_client_info": {
+          "package_name": "com.example.adopet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "745818239565-eoqct44pi9d42fio06re4tsua8j95tkg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.adopet",
+            "certificate_hash": "f5ced9284acf9e4f4e57ebc49715611bbe9ca2e3"
+          }
+        },
+        {
+          "client_id": "745818239565-gc3og0nstf4532hiqt5mu29u9j6e7rgf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5oe2gRLfGQx4sOQIbkxLCCTY8KLxbjsM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "745818239565-gc3og0nstf4532hiqt5mu29u9j6e7rgf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
