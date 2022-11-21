@@ -22,11 +22,11 @@ class _RegistrationScreenState extends State<RegisterScreen> {
   // our form key
   final _formKey = GlobalKey<FormState>();
   // editing Controller
-  final NameEditingController = new TextEditingController();
-  final secondNameEditingController = new TextEditingController();
-  final emailEditingController = new TextEditingController();
-  final passwordEditingController = new TextEditingController();
-  final confirmPasswordEditingController = new TextEditingController();
+  final NameEditingController = TextEditingController();
+  final secondNameEditingController = TextEditingController();
+  final emailEditingController = TextEditingController();
+  final passwordEditingController = TextEditingController();
+  final confirmPasswordEditingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class _RegistrationScreenState extends State<RegisterScreen> {
       controller: NameEditingController,
       keyboardType: TextInputType.name,
       validator: (value) {
-        RegExp regex = new RegExp(r'^.{3,}$');
+        RegExp regex = RegExp(r'^.{3,}$');
         if (value!.isEmpty) {
           return ("Name cannot be Empty");
         }
@@ -51,7 +51,7 @@ class _RegistrationScreenState extends State<RegisterScreen> {
       decoration: InputDecoration(
         filled: true,
         fillColor: const Color.fromARGB(255, 237, 238, 237),
-        prefixIcon: Icon(Icons.account_circle),
+        prefixIcon: const Icon(Icons.account_circle),
         contentPadding: const EdgeInsets.symmetric(horizontal: 50),
         hintText: "Name",
         border: OutlineInputBorder(
@@ -81,7 +81,7 @@ class _RegistrationScreenState extends State<RegisterScreen> {
       decoration: InputDecoration(
         filled: true,
         fillColor: const Color.fromARGB(255, 237, 238, 237),
-        prefixIcon: Icon(Icons.mail),
+        prefixIcon: const Icon(Icons.mail),
         contentPadding: const EdgeInsets.symmetric(horizontal: 50),
         hintText: "Email",
         border: OutlineInputBorder(
@@ -95,7 +95,7 @@ class _RegistrationScreenState extends State<RegisterScreen> {
       controller: passwordEditingController,
       obscureText: true,
       validator: (value) {
-        RegExp regex = new RegExp(r'^.{6,}$');
+        RegExp regex = RegExp(r'^.{6,}$');
         if (value!.isEmpty) {
           return ("Password is required for login");
         }
@@ -110,7 +110,7 @@ class _RegistrationScreenState extends State<RegisterScreen> {
       decoration: InputDecoration(
         filled: true,
         fillColor: const Color.fromARGB(255, 237, 238, 237),
-        prefixIcon: Icon(Icons.vpn_key),
+        prefixIcon: const Icon(Icons.vpn_key),
         contentPadding: const EdgeInsets.symmetric(horizontal: 50),
         hintText: "Password",
         border: OutlineInputBorder(
@@ -137,7 +137,7 @@ class _RegistrationScreenState extends State<RegisterScreen> {
       decoration: InputDecoration(
         filled: true,
         fillColor: const Color.fromARGB(255, 237, 238, 237),
-        prefixIcon: Icon(Icons.vpn_key),
+        prefixIcon: const Icon(Icons.vpn_key),
         contentPadding: const EdgeInsets.symmetric(horizontal: 50),
         hintText: "Confirm Password",
         border: OutlineInputBorder(
@@ -150,14 +150,14 @@ class _RegistrationScreenState extends State<RegisterScreen> {
     final signUpButton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(15),
-      color: Color(0xFF0074FC),
+      color: const Color(0xFF0074FC),
       child: MaterialButton(
-          padding: EdgeInsets.symmetric(horizontal: 100, vertical: 23),
+          padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 23),
           minWidth: MediaQuery.of(context).size.width,
           onPressed: () {
             //signUp(emailEditingController.text, passwordEditingController.text);
           },
-          child: Text(
+          child: const Text(
             "Cadastrar",
             textAlign: TextAlign.center,
             style: TextStyle(
@@ -171,9 +171,9 @@ class _RegistrationScreenState extends State<RegisterScreen> {
     final cancelButton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(15),
-      color: Color(0xFFF31717),
+      color: const Color(0xFFF31717),
       child: MaterialButton(
-          padding: EdgeInsets.symmetric(horizontal: 100, vertical: 23),
+          padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 23),
           minWidth: MediaQuery.of(context).size.width,
           onPressed: () {
             () => Navigator.push(
@@ -183,7 +183,7 @@ class _RegistrationScreenState extends State<RegisterScreen> {
                   ),
                 );
           },
-          child: Text(
+          child: const Text(
             "Voltar",
             textAlign: TextAlign.center,
             style: TextStyle(
@@ -321,7 +321,7 @@ class _RegistrationScreenState extends State<RegisterScreen> {
             height: 21,
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -378,7 +378,7 @@ class _RegistrationScreenState extends State<RegisterScreen> {
             ),
           ),*/
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

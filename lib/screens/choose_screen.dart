@@ -10,9 +10,9 @@ class ChooseScreen extends StatelessWidget {
     final registerButton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(15),
-      color: Color(0xFF0074FC),
+      color: const Color(0xFF0074FC),
       child: MaterialButton(
-          padding: EdgeInsets.symmetric(horizontal: 125, vertical: 23),
+          padding: const EdgeInsets.symmetric(horizontal: 125, vertical: 23),
           minWidth: MediaQuery.of(context).size.width,
           onPressed: () {
             () => Navigator.push(
@@ -22,7 +22,7 @@ class ChooseScreen extends StatelessWidget {
                   ),
                 );
           },
-          child: Text(
+          child: const Text(
             "Pessoa Física",
             textAlign: TextAlign.center,
             style: TextStyle(
@@ -36,9 +36,9 @@ class ChooseScreen extends StatelessWidget {
     final ongregisterButton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(15),
-      color: Color(0xFF0074FC),
+      color: const Color(0xFF0074FC),
       child: MaterialButton(
-          padding: EdgeInsets.symmetric(horizontal: 125, vertical: 23),
+          padding: const EdgeInsets.symmetric(horizontal: 125, vertical: 23),
           minWidth: MediaQuery.of(context).size.width,
           onPressed: () {
             /*() => Navigator.push(
@@ -46,9 +46,9 @@ class ChooseScreen extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) => const OngRegisterScreen(),
                   ),
-                );*/
+                ); TODO: fazer cu*/
           },
-          child: Text(
+          child: const Text(
             "ONG's",
             textAlign: TextAlign.center,
             style: TextStyle(
@@ -90,7 +90,7 @@ class ChooseScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 100, vertical: 15),
+                padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -98,11 +98,11 @@ class ChooseScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 60,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 100, vertical: 15),
+                padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

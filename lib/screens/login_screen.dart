@@ -1,4 +1,4 @@
-import 'package:adopet/pages/home_screen.dart';
+//import 'package:adopet/pages/home_screen.dart';
 import 'package:adopet/screens/choose_screen.dart';
 //import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -16,8 +16,8 @@ class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
 
   // editing controller
-  final TextEditingController emailController = new TextEditingController();
-  final TextEditingController passwordController = new TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   // firebase
   //final _auth = FirebaseAuth.instance;
@@ -48,9 +48,9 @@ class _LoginScreenState extends State<LoginScreen> {
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Color.fromARGB(255, 237, 238, 237),
-        prefixIcon: Icon(Icons.mail),
-        contentPadding: EdgeInsets.fromLTRB(20, 22, 20, 22),
+        fillColor: const Color.fromARGB(255, 237, 238, 237),
+        prefixIcon: const Icon(Icons.mail),
+        contentPadding: const EdgeInsets.fromLTRB(20, 22, 20, 22),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
         ),
@@ -62,7 +62,7 @@ class _LoginScreenState extends State<LoginScreen> {
       controller: passwordController,
       obscureText: true,
       validator: (value) {
-        RegExp regex = new RegExp(r'^.{6,}$');
+        RegExp regex = RegExp(r'^.{6,}$');
         if (value!.isEmpty) {
           return ("Password is required for login");
         }
@@ -76,9 +76,9 @@ class _LoginScreenState extends State<LoginScreen> {
       textInputAction: TextInputAction.done,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Color.fromARGB(255, 237, 238, 237),
-        prefixIcon: Icon(Icons.vpn_key),
-        contentPadding: EdgeInsets.fromLTRB(20, 22, 20, 22),
+        fillColor: const Color.fromARGB(255, 237, 238, 237),
+        prefixIcon: const Icon(Icons.vpn_key),
+        contentPadding: const EdgeInsets.fromLTRB(20, 22, 20, 22),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
         ),
@@ -89,13 +89,13 @@ class _LoginScreenState extends State<LoginScreen> {
     final loginButton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(15),
-      color: Color(0xFF0074FC),
+      color: const Color(0xFF0074FC),
       child: MaterialButton(
-        padding: EdgeInsets.symmetric(horizontal: 125, vertical: 23),
+        padding: const EdgeInsets.symmetric(horizontal: 125, vertical: 23),
         onPressed: () {
           //signIn(emailController.text, passwordController.text);
         },
-        child: Text(
+        child: const Text(
           "Login",
           textAlign: TextAlign.center,
           style: TextStyle(
