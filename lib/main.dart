@@ -1,5 +1,4 @@
 import 'package:adopet/screens/animal_screen.dart';
-import 'package:adopet/screens/register_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {

@@ -107,6 +107,25 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
 
+    final cancelButton = Material(
+      elevation: 5,
+      borderRadius: BorderRadius.circular(15),
+      color: const Color(0xFFF31717),
+      child: MaterialButton(
+        padding: const EdgeInsets.symmetric(horizontal: 109, vertical: 23),
+        onPressed: () {},
+        child: const Text(
+          "Cencelar",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              fontSize: 20,
+              color: Colors.white,
+              fontFamily: 'AoboshiOne',
+              fontWeight: FontWeight.bold),
+        ),
+      ),
+    );
+
     /*GestureDetector(
             child: Container(
               padding:
@@ -148,7 +167,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Color(0xFF5CB2FF),
                       Color(0xFF0074FC),
                     ])),
-            height: 199,
+            height: 140,
             child: const Center(
               child: Text(
                 'Adopet',
@@ -217,7 +236,7 @@ class _LoginScreenState extends State<LoginScreen> {
           const SizedBox(
             height: 19,
           ),
-          GestureDetector(
+          /*GestureDetector(
             child: Container(
               padding:
                   const EdgeInsets.symmetric(horizontal: 100, vertical: 15),
@@ -239,7 +258,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
             ),
-          ),
+          ),*/
+          cancelButton,
           const SizedBox(
             height: 47,
           ),

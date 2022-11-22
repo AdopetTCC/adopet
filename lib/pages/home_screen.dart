@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'favorites.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
     Key? key,
@@ -21,14 +23,14 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          height: 91,
+          height: 90,
           width: MediaQuery.of(context).size.width,
           padding:
-              const EdgeInsets.only(top: 10, left: 20, right: 20, bottom: 10),
+              const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 10),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Text(
+              Text(
                 'Filtros',
                 style: TextStyle(
                   color: Color(0xFF03063A),
@@ -40,12 +42,19 @@ class HomeScreen extends StatelessWidget {
                 height: 7,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
                     onPressed: () => {},
                     style: ButtonStyle(
-                      padding: MaterialStateProperty.all(const EdgeInsets.only(
-                          top: 13, bottom: 13, left: 33, right: 33)),
+                      padding: MaterialStateProperty.all(
+                        const EdgeInsets.only(
+                          top: 13,
+                          bottom: 13,
+                          left: 33,
+                          right: 33,
+                        ),
+                      ),
                       backgroundColor:
                           MaterialStateProperty.all(const Color(0xFFF7F7F8)),
                       shape: MaterialStateProperty.all(
@@ -127,8 +136,9 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          height: 8,
+          height: 20,
         ),
+        CardGato()
       ],
     );
   }

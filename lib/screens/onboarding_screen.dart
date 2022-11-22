@@ -68,7 +68,7 @@ class OnboardScreen extends StatelessWidget {
                       padding: const EdgeInsets.only(
                           left: 40, right: 40, bottom: 40, top: 20),
                       child: Text(
-                        'cachorro',
+                        '',
                         style: Theme.of(context).textTheme.headline2,
                       ),
                     ),
