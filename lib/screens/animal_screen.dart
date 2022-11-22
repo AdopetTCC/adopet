@@ -141,45 +141,49 @@ class AnimalScreen extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
-                            decoration: const BoxDecoration(
-                              color: Color(0xFFCAEDA1),
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(32.0),
+                          Stack(
+                            children: [
+                              Container(
+                                decoration: const BoxDecoration(
+                                  color: Color(0xFFCAEDA1),
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(32.0),
+                                  ),
+                                ),
+                                height: 87,
+                                width: 105,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(top: 7),
+                                  child: Column(
+                                    children: const [
+                                      Text(
+                                        'Sexo',
+                                        style: TextStyle(
+                                          color: Color(0xFF70717B),
+                                          fontFamily: 'AoboshiOne',
+                                          fontSize: 15,
+                                          decoration: TextDecoration.none,
+                                        ),
+                                        textAlign: TextAlign.start,
+                                      ),
+                                      SizedBox(
+                                        height: 4,
+                                      ),
+                                      Text(
+                                        'Macho',
+                                        style: TextStyle(
+                                          color: Color(0xFF373737),
+                                          fontFamily: 'AoboshiOne',
+                                          fontSize: 18,
+                                          decoration: TextDecoration.none,
+                                        ),
+                                        textAlign: TextAlign.start,
+                                      ),
+                                    ],
+                                  ),
+                                ),
                               ),
-                            ),
-                            height: 87,
-                            width: 105,
-                            child: Padding(
-                              padding: const EdgeInsets.only(top: 7),
-                              child: Column(
-                                children: const [
-                                  Text(
-                                    'Sexo',
-                                    style: TextStyle(
-                                      color: Color(0xFF70717B),
-                                      fontFamily: 'AoboshiOne',
-                                      fontSize: 15,
-                                      decoration: TextDecoration.none,
-                                    ),
-                                    textAlign: TextAlign.start,
-                                  ),
-                                  SizedBox(
-                                    height: 4,
-                                  ),
-                                  Text(
-                                    'Macho',
-                                    style: TextStyle(
-                                      color: Color(0xFF373737),
-                                      fontFamily: 'AoboshiOne',
-                                      fontSize: 18,
-                                      decoration: TextDecoration.none,
-                                    ),
-                                    textAlign: TextAlign.start,
-                                  ),
-                                ],
-                              ),
-                            ),
+                            ],
                           ),
                           Container(
                             decoration: const BoxDecoration(
