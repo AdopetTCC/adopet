@@ -1,4 +1,5 @@
-import 'package:adopet/screens/register_screen.dart';
+import 'package:adopet/screens/main_screen.dart';
+import 'package:adopet/pages/favorites.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const RegisterScreen(),
+      home: const MainScreen(),
     );
   }
 }

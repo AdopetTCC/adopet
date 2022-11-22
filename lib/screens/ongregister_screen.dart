@@ -1,19 +1,18 @@
 //import 'package:cloud_firestore/cloud_firestore.dart';
 //import 'package:adopet/model/user_model.dart';
-import 'package:adopet/pages/home_screen.dart';
 //import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 //import 'package:fluttertoast/fluttertoast.dart';
 import 'package:adopet/screens/login_screen.dart';
 
-class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({Key? key}) : super(key: key);
+class OngRegisterScreen extends StatefulWidget {
+  const OngRegisterScreen({Key? key}) : super(key: key);
 
   @override
-  _RegistrationScreenState createState() => _RegistrationScreenState();
+  _OngRegistrationScreenState createState() => _OngRegistrationScreenState();
 }
 
-class _RegistrationScreenState extends State<RegisterScreen> {
+class _OngRegistrationScreenState extends State<OngRegisterScreen> {
   //final _auth = FirebaseAuth.instance;
 
   // string for displaying the error Message
@@ -22,20 +21,20 @@ class _RegistrationScreenState extends State<RegisterScreen> {
   // our form key
   final _formKey = GlobalKey<FormState>();
   // editing Controller
-  final NameEditingController = TextEditingController();
-  final secondNameEditingController = TextEditingController();
-  final emailEditingController = TextEditingController();
-  final passwordEditingController = TextEditingController();
-  final confirmPasswordEditingController = TextEditingController();
+  final NameEditingController = new TextEditingController();
+  final emailEditingController = new TextEditingController();
+  final passwordEditingController = new TextEditingController();
+  final confirmPasswordEditingController = new TextEditingController();
+  final locEditingController = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    final NameField = TextFormField(
+    final OngNameField = TextFormField(
       autofocus: false,
       controller: NameEditingController,
       keyboardType: TextInputType.name,
       validator: (value) {
-        RegExp regex = RegExp(r'^.{3,}$');
+        RegExp regex = new RegExp(r'^.{3,}$');
         if (value!.isEmpty) {
           return ("Name cannot be Empty");
         }
@@ -51,7 +50,7 @@ class _RegistrationScreenState extends State<RegisterScreen> {
       decoration: InputDecoration(
         filled: true,
         fillColor: const Color.fromARGB(255, 237, 238, 237),
-        prefixIcon: const Icon(Icons.account_circle),
+        prefixIcon: Icon(Icons.account_circle),
         contentPadding: const EdgeInsets.symmetric(horizontal: 50),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
@@ -80,7 +79,7 @@ class _RegistrationScreenState extends State<RegisterScreen> {
       decoration: InputDecoration(
         filled: true,
         fillColor: const Color.fromARGB(255, 237, 238, 237),
-        prefixIcon: const Icon(Icons.mail),
+        prefixIcon: Icon(Icons.mail),
         contentPadding: const EdgeInsets.symmetric(horizontal: 50),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
@@ -93,7 +92,7 @@ class _RegistrationScreenState extends State<RegisterScreen> {
       controller: passwordEditingController,
       obscureText: true,
       validator: (value) {
-        RegExp regex = RegExp(r'^.{6,}$');
+        RegExp regex = new RegExp(r'^.{6,}$');
         if (value!.isEmpty) {
           return ("Password is required for login");
         }
@@ -108,7 +107,7 @@ class _RegistrationScreenState extends State<RegisterScreen> {
       decoration: InputDecoration(
         filled: true,
         fillColor: const Color.fromARGB(255, 237, 238, 237),
-        prefixIcon: const Icon(Icons.vpn_key),
+        prefixIcon: Icon(Icons.vpn_key),
         contentPadding: const EdgeInsets.symmetric(horizontal: 50),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
@@ -134,7 +133,7 @@ class _RegistrationScreenState extends State<RegisterScreen> {
       decoration: InputDecoration(
         filled: true,
         fillColor: const Color.fromARGB(255, 237, 238, 237),
-        prefixIcon: const Icon(Icons.vpn_key),
+        prefixIcon: Icon(Icons.vpn_key),
         contentPadding: const EdgeInsets.symmetric(horizontal: 50),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
@@ -142,18 +141,46 @@ class _RegistrationScreenState extends State<RegisterScreen> {
       ),
     );
 
-    //signup button
+    final onglocField = TextFormField(
+      autofocus: false,
+      controller: locEditingController,
+      keyboardType: TextInputType.name,
+      validator: (value) {
+        RegExp regex = new RegExp(r'^.{3,}$');
+        if (value!.isEmpty) {
+          return ("Location cannot be Empty");
+        }
+        if (!regex.hasMatch(value)) {
+          return ("Enter Valid Location(Min. 3 Character)");
+        }
+        return null;
+      },
+      onSaved: (value) {
+        locEditingController.text = value!;
+      },
+      textInputAction: TextInputAction.next,
+      decoration: InputDecoration(
+        filled: true,
+        fillColor: const Color.fromARGB(255, 237, 238, 237),
+        prefixIcon: Icon(Icons.map_outlined),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 50),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
+      ),
+    );
+
     final signUpButton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(15),
-      color: const Color(0xFF0074FC),
+      color: Color(0xFF0074FC),
       child: MaterialButton(
-          padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 23),
+          padding: EdgeInsets.symmetric(horizontal: 100, vertical: 23),
           minWidth: MediaQuery.of(context).size.width,
           onPressed: () {
             //signUp(emailEditingController.text, passwordEditingController.text);
           },
-          child: const Text(
+          child: Text(
             "Cadastrar",
             textAlign: TextAlign.center,
             style: TextStyle(
@@ -167,12 +194,12 @@ class _RegistrationScreenState extends State<RegisterScreen> {
     final cancelButton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(15),
-      color: const Color(0xFFF31717),
+      color: Color(0xFFF31717),
       child: MaterialButton(
-          padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 23),
+          padding: EdgeInsets.symmetric(horizontal: 100, vertical: 23),
           minWidth: MediaQuery.of(context).size.width,
           onPressed: () => Navigator.of(context).pop(),
-          child: const Text(
+          child: Text(
             "Voltar",
             textAlign: TextAlign.center,
             style: TextStyle(
@@ -198,7 +225,7 @@ class _RegistrationScreenState extends State<RegisterScreen> {
                       Color(0xFF5CB2FF),
                       Color(0xFF0074FC),
                     ])),
-            height: 140,
+            height: 120,
             child: const Center(
               child: Text(
                 'Adopet',
@@ -230,7 +257,7 @@ class _RegistrationScreenState extends State<RegisterScreen> {
                 const SizedBox(
                   height: 06,
                 ),
-                NameField,
+                OngNameField,
               ],
             ),
           ),
@@ -310,7 +337,31 @@ class _RegistrationScreenState extends State<RegisterScreen> {
             height: 21,
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 50),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Localização:',
+                  style: TextStyle(
+                    color: Color(0xFF373737),
+                    fontFamily: 'AoboshiOne',
+                    fontSize: 16.7,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(
+                  height: 06,
+                ),
+                onglocField,
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 21,
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -318,56 +369,8 @@ class _RegistrationScreenState extends State<RegisterScreen> {
               ],
             ),
           ),
-          /*GestureDetector(
-            child: Container(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 100, vertical: 15),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                gradient: const LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    Color(0xFF5CB2FF),
-                    Color(0xFF0074FC),
-                  ],
-                ),
-              ),
-              child: const Text(
-                'Continue',
-                style: TextStyle(
-                  fontFamily: 'AoboshiOne',
-                  color: Colors.white,
-                  fontSize: 20,
-                ),
-              ),
-            ),
-          ),*/
-          /*GestureDetector(
-            child: Container(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 100, vertical: 15),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  gradient: const LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        Color(0xFFFF4E4E),
-                        Color(0xFFF31717),
-                      ])),
-              child: const Text(
-                'Cancelar',
-                style: TextStyle(
-                  fontFamily: 'AoboshiOne',
-                  color: Colors.white,
-                  fontSize: 20,
-                ),
-              ),
-            ),
-          ),*/
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+            padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

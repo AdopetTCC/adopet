@@ -96,7 +96,7 @@ class _MainScreenState extends State<MainScreen> {
         elevation: 0,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home_rounded),
+            icon: Icon(Icons.home_rounded, color: Colors.grey),
             label: 'Home',
           ),
           BottomNavigationBarItem(
