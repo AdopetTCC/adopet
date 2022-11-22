@@ -28,66 +28,53 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(140),
-        child: AppBar(
-          toolbarHeight: 140,
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          actions: <Widget>[
-            IconButton(
-              icon: const Icon(Icons.search),
-              color: const Color(0xFF03063A),
-              iconSize: 30,
-              onPressed: () {},
-              padding: const EdgeInsets.only(
-                right: 102,
-                top: 45,
+      appBar: AppBar(
+        toolbarHeight: 140,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.search),
+            color: const Color(0xFF03063A),
+            iconSize: 30,
+            onPressed: () {},
+          ),
+        ],
+        title: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Americana, SP',
+              style: TextStyle(
+                color: Color(0xFF373737),
+                fontFamily: 'AoboshiOne',
+                fontSize: 26,
               ),
+              textAlign: TextAlign.start,
             ),
-          ],
-          title: Padding(
-            padding: const EdgeInsets.only(
-              left: 21,
-              top: 63,
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'Americana, SP',
+            Row(
+              children: const [
+                Text(
+                  'Localização',
                   style: TextStyle(
-                    color: Color(0xFF373737),
+                    color: Color(0xFF70717B),
                     fontFamily: 'AoboshiOne',
-                    fontSize: 26,
+                    fontSize: 15,
                   ),
                   textAlign: TextAlign.start,
                 ),
-                Row(
-                  children: const [
-                    Text(
-                      'Localização',
-                      style: TextStyle(
-                        color: Color(0xFF70717B),
-                        fontFamily: 'AoboshiOne',
-                        fontSize: 15,
-                      ),
-                      textAlign: TextAlign.start,
-                    ),
-                    Icon(
-                      Icons.keyboard_arrow_up_rounded,
-                      color: Color(0xFF5AA9EF),
-                    ),
-                  ],
+                Icon(
+                  Icons.keyboard_arrow_up_rounded,
+                  color: Color(0xFF5AA9EF),
                 ),
               ],
             ),
-          ),
+          ],
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(21.0),
+        padding: const EdgeInsets.only(top: 0, bottom: 20, left: 20, right: 20),
         child: Center(
           child: MainScreen._widgetOptions.elementAt(_selectedIndex),
         ),
