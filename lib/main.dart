@@ -1,3 +1,4 @@
+import 'package:adopet/screens/animal_screen.dart';
 import 'package:adopet/screens/register_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const RegisterScreen(),
+      home: const AnimalScreen(),
     );
   }
 }
