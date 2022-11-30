@@ -68,7 +68,8 @@ class OnboardScreen extends StatelessWidget {
                       padding: const EdgeInsets.only(
                           left: 40, right: 40, bottom: 40, top: 20),
                       child: Text(
-                        '',
+                        'O aplicativo Adopet tem como finalidade promover a adoção de animais domésticos e permitir que seus usuários encontrem um Pet que se adeque as suas condições.',
+                        textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.headline2,
                       ),
                     ),
