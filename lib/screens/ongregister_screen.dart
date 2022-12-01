@@ -3,7 +3,6 @@
 //import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 //import 'package:fluttertoast/fluttertoast.dart';
-import 'package:adopet/screens/login_screen.dart';
 
 class OngRegisterScreen extends StatefulWidget {
   const OngRegisterScreen({Key? key}) : super(key: key);
@@ -21,11 +20,11 @@ class _OngRegistrationScreenState extends State<OngRegisterScreen> {
   // our form key
   final _formKey = GlobalKey<FormState>();
   // editing Controller
-  final NameEditingController = new TextEditingController();
-  final emailEditingController = new TextEditingController();
-  final passwordEditingController = new TextEditingController();
-  final confirmPasswordEditingController = new TextEditingController();
-  final locEditingController = new TextEditingController();
+  final NameEditingController = TextEditingController();
+  final emailEditingController = TextEditingController();
+  final passwordEditingController = TextEditingController();
+  final confirmPasswordEditingController = TextEditingController();
+  final locEditingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +33,7 @@ class _OngRegistrationScreenState extends State<OngRegisterScreen> {
       controller: NameEditingController,
       keyboardType: TextInputType.name,
       validator: (value) {
-        RegExp regex = new RegExp(r'^.{3,}$');
+        RegExp regex = RegExp(r'^.{3,}$');
         if (value!.isEmpty) {
           return ("Name cannot be Empty");
         }
@@ -50,10 +49,14 @@ class _OngRegistrationScreenState extends State<OngRegisterScreen> {
       decoration: InputDecoration(
         filled: true,
         fillColor: const Color.fromARGB(255, 237, 238, 237),
-        prefixIcon: Icon(Icons.account_circle),
+        prefixIcon: const Icon(Icons.account_circle),
         contentPadding: const EdgeInsets.symmetric(horizontal: 50),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
+          borderSide: const BorderSide(
+            width: 0,
+            style: BorderStyle.none,
+          ),
         ),
       ),
     );
@@ -79,10 +82,14 @@ class _OngRegistrationScreenState extends State<OngRegisterScreen> {
       decoration: InputDecoration(
         filled: true,
         fillColor: const Color.fromARGB(255, 237, 238, 237),
-        prefixIcon: Icon(Icons.mail),
+        prefixIcon: const Icon(Icons.mail),
         contentPadding: const EdgeInsets.symmetric(horizontal: 50),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
+          borderSide: const BorderSide(
+            width: 0,
+            style: BorderStyle.none,
+          ),
         ),
       ),
     );
@@ -92,7 +99,7 @@ class _OngRegistrationScreenState extends State<OngRegisterScreen> {
       controller: passwordEditingController,
       obscureText: true,
       validator: (value) {
-        RegExp regex = new RegExp(r'^.{6,}$');
+        RegExp regex = RegExp(r'^.{6,}$');
         if (value!.isEmpty) {
           return ("Password is required for login");
         }
@@ -107,10 +114,14 @@ class _OngRegistrationScreenState extends State<OngRegisterScreen> {
       decoration: InputDecoration(
         filled: true,
         fillColor: const Color.fromARGB(255, 237, 238, 237),
-        prefixIcon: Icon(Icons.vpn_key),
+        prefixIcon: const Icon(Icons.vpn_key),
         contentPadding: const EdgeInsets.symmetric(horizontal: 50),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
+          borderSide: const BorderSide(
+            width: 0,
+            style: BorderStyle.none,
+          ),
         ),
       ),
     );
@@ -133,10 +144,14 @@ class _OngRegistrationScreenState extends State<OngRegisterScreen> {
       decoration: InputDecoration(
         filled: true,
         fillColor: const Color.fromARGB(255, 237, 238, 237),
-        prefixIcon: Icon(Icons.vpn_key),
+        prefixIcon: const Icon(Icons.vpn_key),
         contentPadding: const EdgeInsets.symmetric(horizontal: 50),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
+          borderSide: const BorderSide(
+            width: 0,
+            style: BorderStyle.none,
+          ),
         ),
       ),
     );
@@ -146,7 +161,7 @@ class _OngRegistrationScreenState extends State<OngRegisterScreen> {
       controller: locEditingController,
       keyboardType: TextInputType.name,
       validator: (value) {
-        RegExp regex = new RegExp(r'^.{3,}$');
+        RegExp regex = RegExp(r'^.{3,}$');
         if (value!.isEmpty) {
           return ("Location cannot be Empty");
         }
@@ -162,80 +177,131 @@ class _OngRegistrationScreenState extends State<OngRegisterScreen> {
       decoration: InputDecoration(
         filled: true,
         fillColor: const Color.fromARGB(255, 237, 238, 237),
-        prefixIcon: Icon(Icons.map_outlined),
+        prefixIcon: const Icon(Icons.map_outlined),
         contentPadding: const EdgeInsets.symmetric(horizontal: 50),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
+          borderSide: const BorderSide(
+            width: 0,
+            style: BorderStyle.none,
+          ),
         ),
       ),
     );
 
-    final signUpButton = Material(
-      elevation: 5,
-      borderRadius: BorderRadius.circular(15),
-      color: Color(0xFF0074FC),
-      child: MaterialButton(
-          padding: EdgeInsets.symmetric(horizontal: 100, vertical: 23),
-          minWidth: MediaQuery.of(context).size.width,
-          onPressed: () {
-            //signUp(emailEditingController.text, passwordEditingController.text);
-          },
-          child: Text(
-            "Cadastrar",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-                fontSize: 20,
-                color: Colors.white,
-                fontFamily: 'AoboshiOne',
-                fontWeight: FontWeight.bold),
-          )),
+    final signUpButton = Container(
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Color(0xFF5CB2FF),
+            Color(0xFF0074FC),
+          ],
+        ),
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.transparent,
+          disabledForegroundColor: Colors.transparent.withOpacity(0.38),
+          disabledBackgroundColor: Colors.transparent.withOpacity(0.12),
+          shadowColor: Colors.transparent,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15), // <-- Radius
+          ),
+          minimumSize: const Size(330, 67),
+        ),
+        onPressed: () {
+          //signUp(emailEditingController.text, passwordEditingController.text);
+        },
+        child: const Text(
+          "Login",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              fontSize: 20,
+              color: Colors.white,
+              fontFamily: 'AoboshiOne',
+              fontWeight: FontWeight.bold),
+        ),
+      ),
     );
-
-    final cancelButton = Material(
-      elevation: 5,
-      borderRadius: BorderRadius.circular(15),
-      color: Color(0xFFF31717),
-      child: MaterialButton(
-          padding: EdgeInsets.symmetric(horizontal: 100, vertical: 23),
-          minWidth: MediaQuery.of(context).size.width,
-          onPressed: () => Navigator.of(context).pop(),
-          child: Text(
-            "Voltar",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-                fontSize: 20,
-                color: Colors.white,
-                fontFamily: 'AoboshiOne',
-                fontWeight: FontWeight.bold),
-          )),
+    final cancelButton = Container(
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Color(0xFFFF4E4E),
+            Color(0xFFF31717),
+          ],
+        ),
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.transparent,
+          disabledForegroundColor: Colors.transparent.withOpacity(0.38),
+          disabledBackgroundColor: Colors.transparent.withOpacity(0.12),
+          shadowColor: Colors.transparent,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15), // <-- Radius
+          ),
+          minimumSize: const Size(330, 67),
+        ),
+        onPressed: () => Navigator.of(context).pop(),
+        child: const Text(
+          "Cancelar",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              fontSize: 20,
+              color: Colors.white,
+              fontFamily: 'AoboshiOne',
+              fontWeight: FontWeight.bold),
+        ),
+      ),
     );
 
     return Scaffold(
       body: Column(
         children: [
-          Container(
-            decoration: const BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(40),
-                    bottomRight: Radius.circular(40)),
-                gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Color(0xFF5CB2FF),
-                      Color(0xFF0074FC),
-                    ])),
-            height: 120,
-            child: const Center(
-              child: Text(
-                'Adopet',
-                style: TextStyle(
-                  color: Color.fromARGB(255, 255, 255, 255),
-                  fontFamily: 'AoboshiOne',
-                  fontSize: 67.57,
+          Stack(
+            children: [
+              Container(
+                decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(40),
+                        bottomRight: Radius.circular(40)),
+                    gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          Color(0xFF5CB2FF),
+                          Color(0xFF0074FC),
+                        ])),
+                height: 140,
+                child: const Center(
+                  child: Text(
+                    'Adopet',
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 255, 255, 255),
+                      fontFamily: 'AoboshiOne',
+                      fontSize: 67.57,
+                    ),
+                  ),
                 ),
               ),
-            ),
+              Positioned(
+                top: -8,
+                left: -46,
+                child: Image.asset('icons/pata1.png'),
+              ),
+              Positioned(
+                bottom: 45,
+                right: -50,
+                child: Image.asset('icons/pata4.png'),
+              ),
+            ],
           ),
           const SizedBox(
             height: 25,
@@ -334,7 +400,7 @@ class _OngRegistrationScreenState extends State<OngRegisterScreen> {
             ),
           ),
           const SizedBox(
-            height: 21,
+            height: 14,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 50),
@@ -361,7 +427,7 @@ class _OngRegistrationScreenState extends State<OngRegisterScreen> {
             height: 21,
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -370,7 +436,7 @@ class _OngRegistrationScreenState extends State<OngRegisterScreen> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

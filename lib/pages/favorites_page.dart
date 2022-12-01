@@ -12,7 +12,7 @@ class _Favoritos extends State<Favoritos> {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.topCenter,
-      child: CardGato(),
+      child: const CardGato(),
     );
   }
 }
@@ -97,7 +97,7 @@ class CardGato extends StatelessWidget {
                         ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             shape: const CircleBorder(),
-                            primary: Colors.white,
+                            backgroundColor: Colors.white,
                             padding: const EdgeInsets.all(8.3),
                           ),
                           onPressed: () {},
@@ -120,7 +120,7 @@ class CardGato extends StatelessWidget {
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     shape: const CircleBorder(),
-                    primary: Colors.white,
+                    backgroundColor: Colors.white,
                     padding: const EdgeInsets.all(16),
                   ),
                   child: const Center(

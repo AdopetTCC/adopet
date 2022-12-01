@@ -53,6 +53,10 @@ class _LoginScreenState extends State<LoginScreen> {
         contentPadding: const EdgeInsets.fromLTRB(20, 22, 20, 22),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
+          borderSide: const BorderSide(
+            width: 0,
+            style: BorderStyle.none,
+          ),
         ),
       ),
     );
@@ -81,20 +85,39 @@ class _LoginScreenState extends State<LoginScreen> {
         contentPadding: const EdgeInsets.fromLTRB(20, 22, 20, 22),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
+          borderSide: const BorderSide(
+            width: 0,
+            style: BorderStyle.none,
+          ),
         ),
       ),
     );
 
     //botão
-    final loginButton = Material(
-      elevation: 5,
-      borderRadius: BorderRadius.circular(15),
-      color: const Color(0xFF0074FC),
-      child: MaterialButton(
-        padding: const EdgeInsets.symmetric(horizontal: 125, vertical: 23),
-        onPressed: () {
-          //signIn(emailController.text, passwordController.text);
-        },
+    final loginButton = Container(
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Color(0xFF5CB2FF),
+            Color(0xFF0074FC),
+          ],
+        ),
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.transparent,
+          disabledForegroundColor: Colors.transparent.withOpacity(0.38),
+          disabledBackgroundColor: Colors.transparent.withOpacity(0.12),
+          shadowColor: Colors.transparent,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15), // <-- Radius
+          ),
+          minimumSize: const Size(298, 67),
+        ),
+        onPressed: () {},
         child: const Text(
           "Login",
           textAlign: TextAlign.center,
@@ -107,15 +130,32 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
 
-    final cancelButton = Material(
-      elevation: 5,
-      borderRadius: BorderRadius.circular(15),
-      color: const Color(0xFFF31717),
-      child: MaterialButton(
-        padding: const EdgeInsets.symmetric(horizontal: 109, vertical: 23),
+    final cancelButton = Container(
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Color(0xFFFF4E4E),
+            Color(0xFFF31717),
+          ],
+        ),
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.transparent,
+          disabledForegroundColor: Colors.transparent.withOpacity(0.38),
+          disabledBackgroundColor: Colors.transparent.withOpacity(0.12),
+          shadowColor: Colors.transparent,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15), // <-- Radius
+          ),
+          minimumSize: const Size(298, 67),
+        ),
         onPressed: () {},
         child: const Text(
-          "Cencelar",
+          "Cancelar",
           textAlign: TextAlign.center,
           style: TextStyle(
               fontSize: 20,
@@ -155,29 +195,43 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       body: Column(
         children: [
-          Container(
-            decoration: const BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(40),
-                    bottomRight: Radius.circular(40)),
-                gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Color(0xFF5CB2FF),
-                      Color(0xFF0074FC),
-                    ])),
-            height: 140,
-            child: const Center(
-              child: Text(
-                'Adopet',
-                style: TextStyle(
-                  color: Color.fromARGB(255, 255, 255, 255),
-                  fontFamily: 'AoboshiOne',
-                  fontSize: 67.57,
+          Stack(
+            children: [
+              Container(
+                decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(40),
+                        bottomRight: Radius.circular(40)),
+                    gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          Color(0xFF5CB2FF),
+                          Color(0xFF0074FC),
+                        ])),
+                height: 140,
+                child: const Center(
+                  child: Text(
+                    'Adopet',
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 255, 255, 255),
+                      fontFamily: 'AoboshiOne',
+                      fontSize: 67.57,
+                    ),
+                  ),
                 ),
               ),
-            ),
+              Positioned(
+                top: -8,
+                left: -46,
+                child: Image.asset('icons/pata1.png'),
+              ),
+              Positioned(
+                bottom: 45,
+                right: -50,
+                child: Image.asset('icons/pata4.png'),
+              ),
+            ],
           ),
           const SizedBox(
             height: 45,

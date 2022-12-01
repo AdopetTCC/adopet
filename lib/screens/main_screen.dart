@@ -1,6 +1,8 @@
-import 'package:adopet/pages/favorites.dart';
+import 'package:adopet/pages/animals_page.dart';
+import 'package:adopet/pages/config_page.dart';
+import 'package:adopet/pages/favorites_page.dart';
 import 'package:flutter/material.dart';
-import '../pages/home_screen.dart';
+import '../pages/home_page.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -118,33 +120,5 @@ class _MainScreenState extends State<MainScreen> {
         onTap: _onItemTapped,
       ),
     );
-  }
-}
-
-class Animais extends StatefulWidget {
-  const Animais({super.key});
-
-  @override
-  State<Animais> createState() => _Animais();
-}
-
-class _Animais extends State<Animais> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(color: const Color(0xFFFFE306));
-  }
-}
-
-class Configuracoes extends StatefulWidget {
-  const Configuracoes({super.key});
-
-  @override
-  State<Configuracoes> createState() => _Configuracoes();
-}
-
-class _Configuracoes extends State<Configuracoes> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(color: const Color.fromARGB(255, 6, 255, 39));
   }
 }

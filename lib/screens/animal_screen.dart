@@ -34,7 +34,7 @@ class AnimalScreen extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18),
                         ),
-                        primary: Colors.white,
+                        backgroundColor: Colors.white,
                       ),
                       child: const Icon(
                         Icons.arrow_back_ios_new_rounded,
@@ -50,7 +50,7 @@ class AnimalScreen extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18),
                         ),
-                        primary: Colors.white,
+                        backgroundColor: Colors.white,
                       ),
                       child: const Icon(
                         Icons.more_horiz_rounded,
@@ -101,7 +101,7 @@ class AnimalScreen extends StatelessWidget {
                               onPressed: () {},
                               style: ElevatedButton.styleFrom(
                                 shape: const CircleBorder(),
-                                primary: Colors.white,
+                                backgroundColor: Colors.white,
                                 padding: const EdgeInsets.all(16),
                               ),
                               child: const Center(
@@ -275,7 +275,7 @@ class AnimalScreen extends StatelessWidget {
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
-                              primary: Colors.white,
+                              backgroundColor: Colors.white,
                               padding: const EdgeInsets.all(8.3),
                             ),
                             onPressed: () {},
@@ -321,7 +321,7 @@ class AnimalScreen extends StatelessWidget {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(18),
                                   ),
-                                  primary: Colors.white,
+                                  backgroundColor: Colors.white,
                                 ),
                                 onPressed: () {},
                                 child: const Icon(
@@ -340,7 +340,7 @@ class AnimalScreen extends StatelessWidget {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(18),
                                   ),
-                                  primary: Colors.white,
+                                  backgroundColor: Colors.white,
                                 ),
                                 onPressed: () {},
                                 child: const Icon(

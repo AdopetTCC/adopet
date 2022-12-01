@@ -1,10 +1,8 @@
 //import 'package:cloud_firestore/cloud_firestore.dart';
 //import 'package:adopet/model/user_model.dart';
-import 'package:adopet/pages/home_screen.dart';
 //import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 //import 'package:fluttertoast/fluttertoast.dart';
-import 'package:adopet/screens/login_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -55,6 +53,10 @@ class _RegistrationScreenState extends State<RegisterScreen> {
         contentPadding: const EdgeInsets.symmetric(horizontal: 50),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
+          borderSide: const BorderSide(
+            width: 0,
+            style: BorderStyle.none,
+          ),
         ),
       ),
     );
@@ -84,6 +86,10 @@ class _RegistrationScreenState extends State<RegisterScreen> {
         contentPadding: const EdgeInsets.symmetric(horizontal: 50),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
+          borderSide: const BorderSide(
+            width: 0,
+            style: BorderStyle.none,
+          ),
         ),
       ),
     );
@@ -112,6 +118,10 @@ class _RegistrationScreenState extends State<RegisterScreen> {
         contentPadding: const EdgeInsets.symmetric(horizontal: 50),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
+          borderSide: const BorderSide(
+            width: 0,
+            style: BorderStyle.none,
+          ),
         ),
       ),
     );
@@ -138,77 +148,129 @@ class _RegistrationScreenState extends State<RegisterScreen> {
         contentPadding: const EdgeInsets.symmetric(horizontal: 50),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
+          borderSide: const BorderSide(
+            width: 0,
+            style: BorderStyle.none,
+          ),
         ),
       ),
     );
 
     //signup button
-    final signUpButton = Material(
-      elevation: 5,
-      borderRadius: BorderRadius.circular(15),
-      color: const Color(0xFF0074FC),
-      child: MaterialButton(
-          padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 23),
-          minWidth: MediaQuery.of(context).size.width,
-          onPressed: () {
-            //signUp(emailEditingController.text, passwordEditingController.text);
-          },
-          child: const Text(
-            "Cadastrar",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-                fontSize: 20,
-                color: Colors.white,
-                fontFamily: 'AoboshiOne',
-                fontWeight: FontWeight.bold),
-          )),
+    final signUpButton = Container(
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Color(0xFF5CB2FF),
+            Color(0xFF0074FC),
+          ],
+        ),
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.transparent,
+          disabledForegroundColor: Colors.transparent.withOpacity(0.38),
+          disabledBackgroundColor: Colors.transparent.withOpacity(0.12),
+          shadowColor: Colors.transparent,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15), // <-- Radius
+          ),
+          minimumSize: const Size(330, 67),
+        ),
+        onPressed: () {
+          //signUp(emailEditingController.text, passwordEditingController.text);
+        },
+        child: const Text(
+          "Login",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              fontSize: 20,
+              color: Colors.white,
+              fontFamily: 'AoboshiOne',
+              fontWeight: FontWeight.bold),
+        ),
+      ),
     );
 
-    final cancelButton = Material(
-      elevation: 5,
-      borderRadius: BorderRadius.circular(15),
-      color: const Color(0xFFF31717),
-      child: MaterialButton(
-          padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 23),
-          minWidth: MediaQuery.of(context).size.width,
-          onPressed: () => Navigator.of(context).pop(),
-          child: const Text(
-            "Voltar",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-                fontSize: 20,
-                color: Colors.white,
-                fontFamily: 'AoboshiOne',
-                fontWeight: FontWeight.bold),
-          )),
+    final cancelButton = Container(
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Color(0xFFFF4E4E),
+            Color(0xFFF31717),
+          ],
+        ),
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.transparent,
+          disabledForegroundColor: Colors.transparent.withOpacity(0.38),
+          disabledBackgroundColor: Colors.transparent.withOpacity(0.12),
+          shadowColor: Colors.transparent,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15), // <-- Radius
+          ),
+          minimumSize: const Size(330, 67),
+        ),
+        onPressed: () => Navigator.of(context).pop(),
+        child: const Text(
+          "Cancelar",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              fontSize: 20,
+              color: Colors.white,
+              fontFamily: 'AoboshiOne',
+              fontWeight: FontWeight.bold),
+        ),
+      ),
     );
 
     return Scaffold(
       body: Column(
         children: [
-          Container(
-            decoration: const BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(40),
-                    bottomRight: Radius.circular(40)),
-                gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Color(0xFF5CB2FF),
-                      Color(0xFF0074FC),
-                    ])),
-            height: 140,
-            child: const Center(
-              child: Text(
-                'Adopet',
-                style: TextStyle(
-                  color: Color.fromARGB(255, 255, 255, 255),
-                  fontFamily: 'AoboshiOne',
-                  fontSize: 67.57,
+          Stack(
+            children: [
+              Container(
+                decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(40),
+                        bottomRight: Radius.circular(40)),
+                    gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          Color(0xFF5CB2FF),
+                          Color(0xFF0074FC),
+                        ])),
+                height: 140,
+                child: const Center(
+                  child: Text(
+                    'Adopet',
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 255, 255, 255),
+                      fontFamily: 'AoboshiOne',
+                      fontSize: 67.57,
+                    ),
+                  ),
                 ),
               ),
-            ),
+              Positioned(
+                top: -8,
+                left: -46,
+                child: Image.asset('icons/pata1.png'),
+              ),
+              Positioned(
+                bottom: 45,
+                right: -50,
+                child: Image.asset('icons/pata4.png'),
+              ),
+            ],
           ),
           const SizedBox(
             height: 25,

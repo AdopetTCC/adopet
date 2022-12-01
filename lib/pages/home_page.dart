@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'favorites.dart';
+import 'favorites_page.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
@@ -30,7 +30,7 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
+              const Text(
                 'Filtros',
                 style: TextStyle(
                   color: Color(0xFF03063A),
@@ -138,7 +138,7 @@ class HomeScreen extends StatelessWidget {
         const SizedBox(
           height: 20,
         ),
-        CardGato()
+        const CardGato()
       ],
     );
   }
