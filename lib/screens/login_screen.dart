@@ -126,32 +126,6 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
 
-    /*GestureDetector(
-            child: Container(
-              padding:
-                  const 
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                gradient: const LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    Color(0xFF5CB2FF),
-                    Color(0xFF0074FC),
-                  ],
-                ),
-              ),
-              child: const Text(
-                'Continue',
-                style: TextStyle(
-                  fontFamily: 'AoboshiOne',
-                  color: Colors.white,
-                  fontSize: 20,
-                ),
-              ),
-            ),
-          ),*/
-
     return Scaffold(
       body: Column(
         children: [
@@ -182,61 +156,65 @@ class _LoginScreenState extends State<LoginScreen> {
           const SizedBox(
             height: 45,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50),
+          Form(
+            key: _formKey,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  'E-mail',
-                  style: TextStyle(
-                    color: Color(0xFF373737),
-                    fontFamily: 'AoboshiOne',
-                    fontSize: 16.7,
-                    fontWeight: FontWeight.bold,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 50),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'E-mail',
+                        style: TextStyle(
+                          color: Color(0xFF373737),
+                          fontFamily: 'AoboshiOne',
+                          fontSize: 16.7,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 08,
+                      ),
+                      emailField
+                    ],
                   ),
                 ),
                 const SizedBox(
-                  height: 08,
+                  height: 25,
                 ),
-                emailField
-              ],
-            ),
-          ),
-          const SizedBox(
-            height: 25,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'Senha',
-                  style: TextStyle(
-                    color: Color(0xFF373737),
-                    fontFamily: 'AoboshiOne',
-                    fontSize: 16.7,
-                    fontWeight: FontWeight.bold,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 50),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Senha',
+                        style: TextStyle(
+                          color: Color(0xFF373737),
+                          fontFamily: 'AoboshiOne',
+                          fontSize: 16.7,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 08,
+                      ),
+                      //TextBoxPassw
+                      passwordField
+                    ],
                   ),
                 ),
                 const SizedBox(
-                  height: 08,
+                  height: 47,
                 ),
-                //TextBoxPassw
-                passwordField
-              ],
-            ),
-          ),
-          const SizedBox(
-            height: 47,
-          ),
-          //botao de login
-          loginButton,
-          const SizedBox(
-            height: 19,
-          ),
-          /*GestureDetector(
+                //botao de login
+                loginButton,
+                const SizedBox(
+                  height: 19,
+                ),
+                /*GestureDetector(
             child: Container(
               padding:
                   const EdgeInsets.symmetric(horizontal: 100, vertical: 15),
@@ -259,9 +237,12 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
           ),*/
-          cancelButton,
-          const SizedBox(
-            height: 47,
+                cancelButton,
+                const SizedBox(
+                  height: 47,
+                ),
+              ],
+            ),
           ),
           const Text(
             "Não tem uma conta ainda?",

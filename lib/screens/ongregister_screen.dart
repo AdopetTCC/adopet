@@ -240,146 +240,215 @@ class _OngRegistrationScreenState extends State<OngRegisterScreen> {
           const SizedBox(
             height: 25,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50),
+          Form(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  'Nome:',
-                  style: TextStyle(
-                    color: Color(0xFF373737),
-                    fontFamily: 'AoboshiOne',
-                    fontSize: 16.7,
-                    fontWeight: FontWeight.bold,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 50),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Nome:',
+                        style: TextStyle(
+                          color: Color(0xFF373737),
+                          fontFamily: 'AoboshiOne',
+                          fontSize: 16.7,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 06,
+                      ),
+                      OngNameField,
+                    ],
                   ),
                 ),
                 const SizedBox(
-                  height: 06,
+                  height: 14,
                 ),
-                OngNameField,
-              ],
-            ),
-          ),
-          const SizedBox(
-            height: 14,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'Confirmar E-mail:',
-                  style: TextStyle(
-                    color: Color(0xFF373737),
-                    fontFamily: 'AoboshiOne',
-                    fontSize: 16.7,
-                    fontWeight: FontWeight.bold,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 50),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Confirmar E-mail:',
+                        style: TextStyle(
+                          color: Color(0xFF373737),
+                          fontFamily: 'AoboshiOne',
+                          fontSize: 16.7,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 06,
+                      ),
+                      emailField,
+                    ],
                   ),
                 ),
                 const SizedBox(
-                  height: 06,
+                  height: 14,
                 ),
-                emailField,
-              ],
-            ),
-          ),
-          const SizedBox(
-            height: 14,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'Senha:',
-                  style: TextStyle(
-                    color: Color(0xFF373737),
-                    fontFamily: 'AoboshiOne',
-                    fontSize: 16.7,
-                    fontWeight: FontWeight.bold,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 50),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Senha:',
+                        style: TextStyle(
+                          color: Color(0xFF373737),
+                          fontFamily: 'AoboshiOne',
+                          fontSize: 16.7,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 06,
+                      ),
+                      passwordField,
+                    ],
                   ),
                 ),
                 const SizedBox(
-                  height: 06,
+                  height: 14,
                 ),
-                passwordField,
-              ],
-            ),
-          ),
-          const SizedBox(
-            height: 14,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'Confirmar Senha:',
-                  style: TextStyle(
-                    color: Color(0xFF373737),
-                    fontFamily: 'AoboshiOne',
-                    fontSize: 16.7,
-                    fontWeight: FontWeight.bold,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 50),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Confirmar Senha:',
+                        style: TextStyle(
+                          color: Color(0xFF373737),
+                          fontFamily: 'AoboshiOne',
+                          fontSize: 16.7,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 06,
+                      ),
+                      confirmPasswordField,
+                    ],
                   ),
                 ),
                 const SizedBox(
-                  height: 06,
+                  height: 21,
                 ),
-                confirmPasswordField,
-              ],
-            ),
-          ),
-          const SizedBox(
-            height: 21,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'Localização:',
-                  style: TextStyle(
-                    color: Color(0xFF373737),
-                    fontFamily: 'AoboshiOne',
-                    fontSize: 16.7,
-                    fontWeight: FontWeight.bold,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 50),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Localização:',
+                        style: TextStyle(
+                          color: Color(0xFF373737),
+                          fontFamily: 'AoboshiOne',
+                          fontSize: 16.7,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 06,
+                      ),
+                      onglocField,
+                    ],
                   ),
                 ),
                 const SizedBox(
-                  height: 06,
+                  height: 21,
                 ),
-                onglocField,
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      signUpButton,
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      cancelButton,
+                    ],
+                  ),
+                )
               ],
             ),
           ),
-          const SizedBox(
-            height: 21,
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                signUpButton,
-              ],
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                cancelButton,
-              ],
-            ),
-          )
         ],
       ),
     );
+    /*void signUp(String email, String password) async {
+    if (_formKey.currentState!.validate()) {
+      try {
+        await _auth
+            .createUserWithEmailAndPassword(email: email, password: password)
+            .then((value) => {postDetailsToFirestore()})
+            .catchError((e) {
+          Fluttertoast.showToast(msg: e!.message);
+        });
+      } on FirebaseAuthException catch (error) {
+        switch (error.code) {
+          case "invalid-email":
+            errorMessage = "Your email address appears to be malformed.";
+            break;
+          case "wrong-password":
+            errorMessage = "Your password is wrong.";
+            break;
+          case "user-not-found":
+            errorMessage = "User with this email doesn't exist.";
+            break;
+          case "user-disabled":
+            errorMessage = "User with this email has been disabled.";
+            break;
+          case "too-many-requests":
+            errorMessage = "Too many requests";
+            break;
+          case "operation-not-allowed":
+            errorMessage = "Signing in with Email and Password is not enabled.";
+            break;
+          default:
+            errorMessage = "An undefined Error happened.";
+        }
+        Fluttertoast.showToast(msg: errorMessage!);
+        print(error.code);
+      }
+    }
+  }
+  postDetailsToFirestore() async {
+    // calling our firestore
+    // calling our user model
+    // sedning these values
+
+    FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
+    User? user = _auth.currentUser;
+
+    UserModel userModel = UserModel();
+
+    // writing all the values
+    userModel.email = user!.email;
+    userModel.uid = user.uid;
+    userModel.firstName = firstNameEditingController.text;
+    userModel.secondName = secondNameEditingController.text;
+
+    await firebaseFirestore
+        .collection("users")
+        .doc(user.uid)
+        .set(userModel.toMap());
+    Fluttertoast.showToast(msg: "Account created successfully :) ");
+
+    Navigator.pushAndRemoveUntil(
+        (context),
+        MaterialPageRoute(builder: (context) => HomeScreen()),
+        (route) => false);*/
   }
 }
