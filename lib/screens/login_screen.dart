@@ -268,29 +268,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(
                   height: 19,
                 ),
-                /*GestureDetector(
-            child: Container(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 100, vertical: 15),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  gradient: const LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        Color(0xFFFF4E4E),
-                        Color(0xFFF31717),
-                      ])),
-              child: const Text(
-                'Cancelar',
-                style: TextStyle(
-                  fontFamily: 'AoboshiOne',
-                  color: Colors.white,
-                  fontSize: 20,
-                ),
-              ),
-            ),
-          ),*/
                 cancelButton,
                 const SizedBox(
                   height: 47,
