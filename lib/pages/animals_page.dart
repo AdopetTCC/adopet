@@ -1,4 +1,5 @@
 import 'package:adopet/utils/utils.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -94,9 +95,11 @@ class _Animais extends State<Animais> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    CircleAvatar(
-                      backgroundImage: AssetImage('images/cat.png'),
-                    ),
+                    // CircleAvatar(
+                    //   backgroundImage: NetworkImage(
+                    //     //user.photoUrl,
+                    //   ),
+                    // ),
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.45,
                       child: TextField(
@@ -115,7 +118,7 @@ class _Animais extends State<Animais> {
                         child: Container(
                           decoration: BoxDecoration(
                             image: DecorationImage(
-                              image: AssetImage('images/cat.png'),
+                              image: MemoryImage(_file!),
                               fit: BoxFit.fill,
                               alignment: FractionalOffset.topCenter,
                             ),
