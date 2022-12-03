@@ -274,12 +274,12 @@ class _RegistrationScreenState extends State<RegisterScreen> {
               Positioned(
                 top: -8,
                 left: -46,
-                child: Image.asset('icons/pata1.png'),
+                child: Image.asset('./assets/icons/pata1.png'),
               ),
               Positioned(
                 bottom: 45,
                 right: -50,
-                child: Image.asset('icons/pata4.png'),
+                child: Image.asset('./assets/icons/pata4.png'),
               ),
             ],
           ),

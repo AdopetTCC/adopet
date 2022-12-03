@@ -1,5 +1,6 @@
 import 'package:adopet/screens/login_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class OnboardScreen extends StatelessWidget {
   const OnboardScreen({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class OnboardScreen extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
               child: const Image(
-                image: AssetImage('images/dog.png'),
+                image: AssetImage('./assets/images/dog.png'),
                 alignment: Alignment.bottomLeft,
                 fit: BoxFit.cover,
               ),
@@ -80,12 +81,17 @@ class OnboardScreen extends StatelessWidget {
                 padding:
                     const EdgeInsets.only(bottom: 128, right: 65, left: 65),
                 child: GestureDetector(
-                  onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const LoginScreen(),
-                    ),
-                  ),
+                  onTap: () async {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LoginScreen(),
+                      ),
+                    );
+
+                    final prefs = await SharedPreferences.getInstance();
+                    prefs.setBool('showHome', true);
+                  },
                   child: Container(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 100, vertical: 15),

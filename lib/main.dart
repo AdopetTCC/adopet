@@ -1,9 +1,17 @@
+import 'package:adopet/screens/login_screen.dart';
+import 'package:adopet/screens/onboarding_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:adopet/screens/ongregister_screen.dart';
 import 'package:flutter/foundation.dart';
+
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  final prefs = await SharedPreferences.getInstance();
+  final showHome = prefs.getBool('showHome') ?? false;
+
   WidgetsFlutterBinding.ensureInitialized();
   if (kIsWeb) {
     await Firebase.initializeApp(
@@ -16,11 +24,17 @@ void main() async {
   } else {
     await Firebase.initializeApp();
   }
-  runApp(const MyApp());
+
+  runApp(MyApp(showHome: showHome));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  final bool showHome;
+
+  const MyApp({
+    Key? key,
+    required this.showHome,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +58,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const OngRegisterScreen(),
+      home: showHome ? const LoginScreen() : const OnboardScreen(),
     );
   }
 }

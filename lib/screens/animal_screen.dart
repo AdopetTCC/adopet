@@ -17,7 +17,7 @@ class AnimalScreen extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               height: 450,
               child: const Image(
-                image: AssetImage('images/cat.png'),
+                image: AssetImage('./assets/images/cat.png'),
                 alignment: Alignment.topCenter,
                 fit: BoxFit.cover,
               ),
@@ -34,7 +34,7 @@ class AnimalScreen extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18),
                         ),
-                        backgroundColor: Colors.white,
+                        primary: Colors.white,
                       ),
                       child: const Icon(
                         Icons.arrow_back_ios_new_rounded,
@@ -50,7 +50,7 @@ class AnimalScreen extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18),
                         ),
-                        backgroundColor: Colors.white,
+                        primary: Colors.white,
                       ),
                       child: const Icon(
                         Icons.more_horiz_rounded,
@@ -101,7 +101,7 @@ class AnimalScreen extends StatelessWidget {
                               onPressed: () {},
                               style: ElevatedButton.styleFrom(
                                 shape: const CircleBorder(),
-                                backgroundColor: Colors.white,
+                                primary: Colors.white,
                                 padding: const EdgeInsets.all(16),
                               ),
                               child: const Center(
@@ -275,14 +275,14 @@ class AnimalScreen extends StatelessWidget {
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
-                              backgroundColor: Colors.white,
+                              primary: Colors.white,
                               padding: const EdgeInsets.all(8.3),
                             ),
                             onPressed: () {},
                             child: const CircleAvatar(
                               radius: 35,
                               backgroundImage: AssetImage(
-                                './images/sandro.png',
+                                './assets/images/sandro.png',
                               ),
                             ),
                           ),
@@ -321,7 +321,7 @@ class AnimalScreen extends StatelessWidget {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(18),
                                   ),
-                                  backgroundColor: Colors.white,
+                                  primary: Colors.white,
                                 ),
                                 onPressed: () {},
                                 child: const Icon(
@@ -340,7 +340,7 @@ class AnimalScreen extends StatelessWidget {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(18),
                                   ),
-                                  backgroundColor: Colors.white,
+                                  primary: Colors.white,
                                 ),
                                 onPressed: () {},
                                 child: const Icon(

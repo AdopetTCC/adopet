@@ -23,7 +23,6 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          height: 90,
           width: MediaQuery.of(context).size.width,
           padding:
               const EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 10),
