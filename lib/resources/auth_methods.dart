@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:adopet/models/user.dart' as model;
 
 class AuthMethods {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -27,13 +28,19 @@ class AuthMethods {
             email: email, password: password);
 
         print(cred.user!.uid);
+
         //add user to database
-        await _firestore.collection('users').doc(cred.user!.uid).set({
-          'name': name,
-          'uid': cred.user!.uid,
-          'email': email,
-          'telefone': telefone,
-        });
+
+        model.User user = model.User(
+          name: name,
+          uid: cred.user!.uid,
+          email: email,
+          telefone: telefone,
+        );
+
+        await _firestore.collection('users').doc(cred.user!.uid).set(
+              user.toJson(),
+            );
         res = "sucesso";
       }
     } catch (err) {

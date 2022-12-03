@@ -1,11 +1,11 @@
 //import 'package:adopet/pages/home_screen.dart';
+import 'package:adopet/pages/home_page.dart';
 import 'package:adopet/screens/choose_screen.dart';
 import 'package:adopet/utils/utils.dart';
 import 'package:adopet/widgets/text_field_input.dart';
 //import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:adopet/resources/auth_methods.dart';
-import 'package:adopet/utils/utils.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);

@@ -1,5 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:adopet/screens/login_screen.dart';
+import 'package:adopet/screens/ongregister_screen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Adopet',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         textTheme: const TextTheme(
@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const LoginScreen(),
+      home: const OngRegisterScreen(),
     );
   }
 }
