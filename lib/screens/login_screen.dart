@@ -1,9 +1,11 @@
 //import 'package:adopet/pages/home_screen.dart';
 import 'package:adopet/screens/choose_screen.dart';
+import 'package:adopet/utils/utils.dart';
 import 'package:adopet/widgets/text_field_input.dart';
 //import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-//import 'package:fluttertoast/fluttertoast.dart';
+import 'package:adopet/resources/auth_methods.dart';
+import 'package:adopet/utils/utils.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -25,6 +27,16 @@ class _LoginScreenState extends State<LoginScreen> {
     super.dispose();
     _emailController.dispose();
     _passwordController.dispose();
+  }
+
+  void loginUser() async {
+    String res = await AuthMethods().loginUser(
+        email: _emailController.text, password: _passwordController.text);
+
+    if (res == "sucesso") {
+    } else {
+      showSnackBar(context, res);
+    }
   }
 
   @override
@@ -119,7 +131,7 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           minimumSize: const Size(298, 67),
         ),
-        onPressed: () {},
+        onPressed: loginUser,
         child: const Text(
           "Login",
           textAlign: TextAlign.center,

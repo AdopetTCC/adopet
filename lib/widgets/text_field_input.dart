@@ -19,7 +19,6 @@ class TextFieldInput extends StatelessWidget {
     return TextField(
       controller: textEditingController,
       decoration: InputDecoration(
-        hintText: hintText,
         filled: true,
         fillColor: const Color.fromARGB(255, 237, 238, 237),
         contentPadding: const EdgeInsets.fromLTRB(20, 22, 20, 22),
