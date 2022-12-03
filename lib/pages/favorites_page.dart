@@ -39,7 +39,7 @@ class CardGato extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 height: 270,
                 child: const Image(
-                  image: AssetImage('images/cat.png'),
+                  image: AssetImage('./assets/images/cat.png'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -104,7 +104,7 @@ class CardGato extends StatelessWidget {
                           child: const CircleAvatar(
                             radius: 30,
                             backgroundImage: AssetImage(
-                              './images/sandro.png',
+                              './assets/images/sandro.png',
                             ),
                           ),
                         ),

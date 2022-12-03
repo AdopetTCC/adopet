@@ -35,20 +35,14 @@ class AuthMethods {
         //.uploadImageToStorage('profilePics', file, false);
 
         print(cred.user!.uid);
+
         //add user to database
-
-        model.User user = model.User(
-          name: name,
-          uid: cred.user!.uid,
-          email: email,
-          telefone: telefone,
-          //'photoUrl': photoUrl,
-        );
-
-        await _firestore
-            .collection('users')
-            .doc(cred.user!.uid)
-            .set(user.toJson());
+        await _firestore.collection('users').doc(cred.user!.uid).set({
+          'name': name,
+          'uid': cred.user!.uid,
+          'email': email,
+          'telefone': telefone,
+        });
         res = "sucesso";
       }
     } catch (err) {
