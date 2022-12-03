@@ -1,5 +1,6 @@
 //import 'package:adopet/pages/home_screen.dart';
 import 'package:adopet/screens/choose_screen.dart';
+import 'package:adopet/widgets/text_field_input.dart';
 //import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 //import 'package:fluttertoast/fluttertoast.dart';
@@ -16,19 +17,20 @@ class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
 
   // editing controller
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
-  // firebase
-  //final _auth = FirebaseAuth.instance;
-
-  // string for displaying the error Message
-  String? errorMessage;
+  @override
+  void dispose() {
+    super.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     //emailTextField
-    final emailField = TextFormField(
+    /*final emailField = TextFormField(
       autofocus: false,
       controller: emailController,
       keyboardType: TextInputType.emailAddress,
@@ -59,9 +61,9 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ),
       ),
-    );
+    );*/
 
-    final passwordField = TextFormField(
+    /*final passwordField = TextFormField(
       autofocus: false,
       controller: passwordController,
       obscureText: true,
@@ -91,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ),
       ),
-    );
+    );*/
 
     //botão
     final loginButton = Container(
@@ -130,7 +132,7 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
 
-    final cancelButton = Container(
+    /*final cancelButton = Container(
       decoration: BoxDecoration(
         gradient: const LinearGradient(
           begin: Alignment.topCenter,
@@ -164,7 +166,7 @@ class _LoginScreenState extends State<LoginScreen> {
               fontWeight: FontWeight.bold),
         ),
       ),
-    );
+    );*/
 
     return Scaffold(
       body: Column(
@@ -231,7 +233,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       const SizedBox(
                         height: 08,
                       ),
-                      emailField
+                      TextFieldInput(
+                          textEditingController: _emailController,
+                          hintText: 'E-mail',
+                          textInputType: TextInputType.emailAddress)
                     ],
                   ),
                 ),
@@ -256,7 +261,12 @@ class _LoginScreenState extends State<LoginScreen> {
                         height: 08,
                       ),
                       //TextBoxPassw
-                      passwordField
+                      TextFieldInput(
+                        textEditingController: _passwordController,
+                        hintText: 'Senha',
+                        textInputType: TextInputType.text,
+                        isPass: true,
+                      )
                     ],
                   ),
                 ),
@@ -267,10 +277,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 loginButton,
                 const SizedBox(
                   height: 19,
-                ),
-                cancelButton,
-                const SizedBox(
-                  height: 47,
                 ),
               ],
             ),

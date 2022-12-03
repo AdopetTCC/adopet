@@ -1,8 +1,9 @@
 //import 'package:cloud_firestore/cloud_firestore.dart';
 //import 'package:adopet/model/user_model.dart';
 //import 'package:firebase_auth/firebase_auth.dart';
+import 'package:adopet/resources/auth_methods.dart';
+import 'package:adopet/widgets/text_field_input.dart';
 import 'package:flutter/material.dart';
-//import 'package:fluttertoast/fluttertoast.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -12,25 +13,30 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegistrationScreenState extends State<RegisterScreen> {
-  //final _auth = FirebaseAuth.instance;
-
-  // string for displaying the error Message
-  String? errorMessage;
-
   // our form key
   final _formKey = GlobalKey<FormState>();
   // editing Controller
-  final NameEditingController = TextEditingController();
-  final secondNameEditingController = TextEditingController();
-  final emailEditingController = TextEditingController();
-  final passwordEditingController = TextEditingController();
-  final confirmPasswordEditingController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _telController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _conPasswordController = TextEditingController();
+
+  @override
+  void dispose() {
+    super.dispose();
+    _nameController.dispose();
+    _telController.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+    _conPasswordController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    final NameField = TextFormField(
+    /*final NameField = TextFormField(
       autofocus: false,
-      controller: NameEditingController,
+      controller: nameEditingController,
       keyboardType: TextInputType.name,
       validator: (value) {
         RegExp regex = RegExp(r'^.{3,}$');
@@ -43,7 +49,7 @@ class _RegistrationScreenState extends State<RegisterScreen> {
         return null;
       },
       onSaved: (value) {
-        NameEditingController.text = value!;
+        nameEditingController.text = value!;
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
@@ -154,7 +160,7 @@ class _RegistrationScreenState extends State<RegisterScreen> {
           ),
         ),
       ),
-    );
+    );*/
 
     //signup button
     final signUpButton = Container(
@@ -180,11 +186,16 @@ class _RegistrationScreenState extends State<RegisterScreen> {
           ),
           minimumSize: const Size(330, 67),
         ),
-        onPressed: () {
-          //signUp(emailEditingController.text, passwordEditingController.text);
+        onPressed: () async {
+          String res = await AuthMethods().signUpUser(
+              email: _emailController.text,
+              password: _passwordController.text,
+              name: _nameController.text,
+              telefone: _telController.text);
+          print(res);
         },
         child: const Text(
-          "Login",
+          "Cadastrar",
           textAlign: TextAlign.center,
           style: TextStyle(
               fontSize: 20,
@@ -296,7 +307,10 @@ class _RegistrationScreenState extends State<RegisterScreen> {
                       const SizedBox(
                         height: 06,
                       ),
-                      NameField,
+                      TextFieldInput(
+                          textEditingController: _nameController,
+                          hintText: 'Nome',
+                          textInputType: TextInputType.name),
                     ],
                   ),
                 ),
@@ -309,7 +323,7 @@ class _RegistrationScreenState extends State<RegisterScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Text(
-                        'Confirmar E-mail:',
+                        'Telefone:',
                         style: TextStyle(
                           color: Color(0xFF373737),
                           fontFamily: 'AoboshiOne',
@@ -320,7 +334,37 @@ class _RegistrationScreenState extends State<RegisterScreen> {
                       const SizedBox(
                         height: 06,
                       ),
-                      emailField,
+                      TextFieldInput(
+                          textEditingController: _telController,
+                          hintText: 'Telefone',
+                          textInputType: TextInputType.number),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 14,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 50),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'E-mail:',
+                        style: TextStyle(
+                          color: Color(0xFF373737),
+                          fontFamily: 'AoboshiOne',
+                          fontSize: 16.7,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 06,
+                      ),
+                      TextFieldInput(
+                          textEditingController: _emailController,
+                          hintText: 'E-mail',
+                          textInputType: TextInputType.emailAddress),
                     ],
                   ),
                 ),
@@ -344,7 +388,12 @@ class _RegistrationScreenState extends State<RegisterScreen> {
                       const SizedBox(
                         height: 06,
                       ),
-                      passwordField,
+                      TextFieldInput(
+                        textEditingController: _passwordController,
+                        hintText: 'Senha',
+                        textInputType: TextInputType.text,
+                        isPass: true,
+                      ),
                     ],
                   ),
                 ),
@@ -368,7 +417,12 @@ class _RegistrationScreenState extends State<RegisterScreen> {
                       const SizedBox(
                         height: 06,
                       ),
-                      confirmPasswordField,
+                      TextFieldInput(
+                        textEditingController: _conPasswordController,
+                        hintText: 'Confirmar Senha',
+                        textInputType: TextInputType.text,
+                        isPass: true,
+                      ),
                     ],
                   ),
                 ),
