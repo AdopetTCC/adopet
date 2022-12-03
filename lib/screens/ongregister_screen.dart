@@ -296,12 +296,8 @@ class _OngRegistrationScreenState extends State<OngRegisterScreen> {
                       ],
                     ),
                   ),
-                ),
-                const SizedBox(
-                  height: 21,
-                ),
-                confirmPasswordField,
-              ],
+                ],
+              ),
             ),
             const SizedBox(
               height: 21,
