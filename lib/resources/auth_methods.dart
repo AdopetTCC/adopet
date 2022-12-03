@@ -1,8 +1,11 @@
+import 'dart:html';
+
+import 'package:adopet/resources/storage_methods.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:adopet/models/user.dart' as model;
 
 class AuthMethods {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -24,16 +27,28 @@ class AuthMethods {
           telefone.isNotEmpty) {
         //register user
         UserCredential cred = await _auth.createUserWithEmailAndPassword(
-            email: email, password: password);
+          email: email,
+          password: password,
+        );
+
+        //String photoUrl = await StorageMethods()
+        //.uploadImageToStorage('profilePics', file, false);
 
         print(cred.user!.uid);
         //add user to database
-        await _firestore.collection('users').doc(cred.user!.uid).set({
-          'name': name,
-          'uid': cred.user!.uid,
-          'email': email,
-          'telefone': telefone,
-        });
+
+        model.User user = model.User(
+          name: name,
+          uid: cred.user!.uid,
+          email: email,
+          telefone: telefone,
+          //'photoUrl': photoUrl,
+        );
+
+        await _firestore
+            .collection('users')
+            .doc(cred.user!.uid)
+            .set(user.toJson());
         res = "sucesso";
       }
     } catch (err) {
