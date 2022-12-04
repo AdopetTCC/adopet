@@ -1,6 +1,8 @@
+import 'package:adopet/resources/storage_methods.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:adopet/models/user.dart' as model;
+import 'package:flutter/foundation.dart';
 
 class AuthMethods {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -21,7 +23,7 @@ class AuthMethods {
     required String password,
     required String name,
     required String telefone,
-    //required Uint8List file,
+    required Uint8List file,
   }) async {
     String res = "Algum erro ocorreu";
     try {
@@ -35,8 +37,8 @@ class AuthMethods {
           password: password,
         );
 
-        // String photoUrl = await StorageMethods()
-        // .uploadImageToStorage('profilePics', file, false);
+        String photoUrl = await StorageMethods()
+            .uploadImageToStorage('profilePics', file, false);
 
         print(cred.user!.uid);
 

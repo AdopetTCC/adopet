@@ -40,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       );
     } else {
-      showSnackBar(context, res);
+      showSnackBar(res, context);
     }
   }
 

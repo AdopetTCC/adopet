@@ -1,9 +1,14 @@
 //import 'package:cloud_firestore/cloud_firestore.dart';
 //import 'package:adopet/model/user_model.dart';
 //import 'package:firebase_auth/firebase_auth.dart';
+import 'dart:typed_data';
+
 import 'package:adopet/resources/auth_methods.dart';
 import 'package:adopet/widgets/text_field_input.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+
+import '../utils/utils.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -21,6 +26,16 @@ class _RegistrationScreenState extends State<RegisterScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _conPasswordController = TextEditingController();
+  bool _isLoading = false;
+  Uint8List? _image;
+
+  selectImage() async {
+    Uint8List im = await pickImage(ImageSource.gallery);
+    // set state because we need to display the image we selected on the circle avatar
+    setState(() {
+      _image = im;
+    });
+  }
 
   @override
   void dispose() {
@@ -191,7 +206,8 @@ class _RegistrationScreenState extends State<RegisterScreen> {
               email: _emailController.text,
               password: _passwordController.text,
               name: _nameController.text,
-              telefone: _telController.text);
+              telefone: _telController.text,
+              file: _image!);
           print(res);
         },
         child: const Text(

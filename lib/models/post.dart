@@ -1,48 +1,51 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Post {
-  final String description;
+  final String name;
   final String uid;
-  final String username;
-  final likes;
+  final String sex;
+  final String size;
+  final String age;
   final String postId;
-  final DateTime datePublished;
   final String postUrl;
   final String profImage;
+  final String description;
 
-  const Post({
-    required this.description,
-    required this.uid,
-    required this.username,
-    required this.likes,
-    required this.postId,
-    required this.datePublished,
-    required this.postUrl,
-    required this.profImage,
-  });
+  const Post(
+      {required this.name,
+      required this.uid,
+      required this.sex,
+      required this.size,
+      required this.age,
+      required this.postId,
+      required this.postUrl,
+      required this.profImage,
+      required this.description});
 
   static Post fromSnap(DocumentSnapshot snap) {
     var snapshot = snap.data() as Map<String, dynamic>;
 
     return Post(
-        description: snapshot["description"],
+        name: snapshot["name"],
         uid: snapshot["uid"],
-        likes: snapshot["likes"],
+        sex: snapshot["sex"],
+        size: snapshot["size"],
+        age: snapshot["age"],
         postId: snapshot["postId"],
-        datePublished: snapshot["datePublished"],
-        username: snapshot["username"],
-        postUrl: snapshot['postUrl'],
-        profImage: snapshot['profImage']);
+        postUrl: snapshot["postUrl"],
+        profImage: snapshot["profImage"],
+        description: snapshot['description']);
   }
 
   Map<String, dynamic> toJson() => {
-        "description": description,
+        "name": name,
         "uid": uid,
-        "likes": likes,
-        "username": username,
+        "sex": sex,
+        "size": size,
+        "age": age,
         "postId": postId,
-        "datePublished": datePublished,
         'postUrl': postUrl,
-        'profImage': profImage
+        'profImage': profImage,
+        'description': description,
       };
 }
