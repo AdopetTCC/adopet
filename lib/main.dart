@@ -1,9 +1,11 @@
+import 'package:adopet/providers/user_provider.dart';
+import 'package:adopet/screens/animal_screen.dart';
 import 'package:adopet/screens/login_screen.dart';
 import 'package:adopet/screens/onboarding_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
-
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
@@ -28,7 +30,7 @@ void main() async {
   runApp(MyApp(showHome: showHome));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   final bool showHome;
 
   const MyApp({
@@ -37,28 +39,52 @@ class MyApp extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    super.initState();
+    addData();
+  }
+
+  addData() async {
+    UserProvider _userProvider =
+        Provider.of<UserProvider>(context, listen: false);
+    await _userProvider.refreshUser();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Adopet',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        textTheme: const TextTheme(
-          headline1: TextStyle(
-            color: Color.fromARGB(255, 255, 255, 255),
-            fontFamily: 'AoboshiOne',
-            fontSize: 22,
-            fontWeight: FontWeight.w700,
-          ),
-          headline2: TextStyle(
-            color: Color.fromARGB(255, 255, 255, 255),
-            fontFamily: 'AoboshiOne',
-            fontSize: 17,
-            fontWeight: FontWeight.w300,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => UserProvider(),
+        ),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Adopet',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          textTheme: const TextTheme(
+            headline1: TextStyle(
+              color: Color.fromARGB(255, 255, 255, 255),
+              fontFamily: 'AoboshiOne',
+              fontSize: 22,
+              fontWeight: FontWeight.w700,
+            ),
+            headline2: TextStyle(
+              color: Color.fromARGB(255, 255, 255, 255),
+              fontFamily: 'AoboshiOne',
+              fontSize: 17,
+              fontWeight: FontWeight.w300,
+            ),
           ),
         ),
+        home: widget.showHome ? const LoginScreen() : const OnboardScreen(),
       ),
-      home: showHome ? const LoginScreen() : const OnboardScreen(),
     );
   }
 }

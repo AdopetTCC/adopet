@@ -1,10 +1,11 @@
-import 'dart:typed_data';
-
+import 'package:adopet/providers/user_provider.dart';
 import 'package:adopet/utils/utils.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:provider/provider.dart';
+import 'package:adopet/models/user.dart' as model;
 
 class Animais extends StatefulWidget {
   const Animais({super.key});
@@ -56,7 +57,7 @@ class _Animais extends State<Animais> {
 
   @override
   Widget build(BuildContext context) {
-    // final User user = Provider.of<UserProvider>(context).getUser;
+    model.User user = Provider.of<UserProvider>(context).getUser;
 
     return _file == null
         ? Center(

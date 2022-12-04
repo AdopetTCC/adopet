@@ -1,13 +1,22 @@
 // ignore_for_file: use_full_hex_values_for_flutter_colors
-
+import 'package:adopet/providers/user_provider.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:adopet/models/user.dart' as model;
 
-class AnimalScreen extends StatelessWidget {
+class AnimalScreen extends StatefulWidget {
   const AnimalScreen({super.key});
 
   @override
+  State<AnimalScreen> createState() => _AnimalScreenState();
+}
+
+class _AnimalScreenState extends State<AnimalScreen> {
+  @override
   Widget build(BuildContext context) {
+    model.User user = Provider.of<UserProvider>(context).getUser;
+
     return Stack(
       alignment: Alignment.topCenter,
       children: <Widget>[
@@ -84,8 +93,8 @@ class AnimalScreen extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text(
-                            'Lilico',
+                          Text(
+                            user.name,
                             style: TextStyle(
                               color: Color(0xFF373737),
                               fontFamily: 'AoboshiOne',
