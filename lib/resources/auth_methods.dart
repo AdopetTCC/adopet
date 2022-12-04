@@ -2,10 +2,9 @@ import 'dart:typed_data';
 
 import 'package:adopet/resources/storage_methods.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:adopet/models/user.dart' as model;
+import 'package:flutter/foundation.dart';
 
 class AuthMethods {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -14,10 +13,10 @@ class AuthMethods {
   Future<model.User> getUserDetails() async {
     User currentUser = _auth.currentUser!;
 
-    DocumentSnapshot documentSnapshot =
+    DocumentSnapshot snap =
         await _firestore.collection('users').doc(currentUser.uid).get();
 
-    return model.User.fromSnap(documentSnapshot);
+    return model.User.fromSnap(snap);
   }
 
   //sing up user
@@ -41,8 +40,8 @@ class AuthMethods {
           password: password,
         );
 
-        //String photoUrl = await StorageMethods()
-        //.uploadImageToStorage('profilePics', file, false);
+        String photoUrl = await StorageMethods()
+            .uploadImageToStorage('profilePics', file, false);
 
         print(cred.user!.uid);
 
