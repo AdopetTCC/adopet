@@ -47,72 +47,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    //emailTextField
-    /*final emailField = TextFormField(
-      autofocus: false,
-      controller: emailController,
-      keyboardType: TextInputType.emailAddress,
-      validator: (value) {
-        if (value!.isEmpty) {
-          return ("Please Enter Your Email");
-        }
-        // reg expression for email validation
-        if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]").hasMatch(value)) {
-          return ("Please Enter a valid email");
-        }
-        return null;
-      },
-      onSaved: (value) {
-        emailController.text = value!;
-      },
-      textInputAction: TextInputAction.next,
-      decoration: InputDecoration(
-        filled: true,
-        fillColor: const Color.fromARGB(255, 237, 238, 237),
-        prefixIcon: const Icon(Icons.mail),
-        contentPadding: const EdgeInsets.fromLTRB(20, 22, 20, 22),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(15),
-          borderSide: const BorderSide(
-            width: 0,
-            style: BorderStyle.none,
-          ),
-        ),
-      ),
-    );*/
-
-    /*final passwordField = TextFormField(
-      autofocus: false,
-      controller: passwordController,
-      obscureText: true,
-      validator: (value) {
-        RegExp regex = RegExp(r'^.{6,}$');
-        if (value!.isEmpty) {
-          return ("Password is required for login");
-        }
-        if (!regex.hasMatch(value)) {
-          return ("Enter Valid Password(Min. 6 Character)");
-        }
-      },
-      onSaved: (value) {
-        passwordController.text = value!;
-      },
-      textInputAction: TextInputAction.done,
-      decoration: InputDecoration(
-        filled: true,
-        fillColor: const Color.fromARGB(255, 237, 238, 237),
-        prefixIcon: const Icon(Icons.vpn_key),
-        contentPadding: const EdgeInsets.fromLTRB(20, 22, 20, 22),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(15),
-          borderSide: const BorderSide(
-            width: 0,
-            style: BorderStyle.none,
-          ),
-        ),
-      ),
-    );*/
-
     //botão
     final loginButton = Container(
       decoration: BoxDecoration(
@@ -128,9 +62,9 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          primary: Colors.transparent,
-          // disabledForegroundColor: Colors.transparent.withOpacity(0.38),
-          // disabledprimary: Colors.transparent.withOpacity(0.12),
+          backgroundColor: Colors.transparent,
+          disabledForegroundColor: Colors.transparent.withOpacity(0.38),
+          disabledBackgroundColor: Colors.transparent.withOpacity(0.12),
           shadowColor: Colors.transparent,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15), // <-- Radius
@@ -333,44 +267,3 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
-/*
-// login function
-void signIn(String email, String password) async {
-  if (_formKey.currentState!.validate()) {
-    try {
-      await _auth
-          .signInWithEmailAndPassword(email: email, password: password)
-          .then((uid) => {
-                Fluttertoast.showToast(msg: "Login Successful"),
-                Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (context) => HomeScreen())),
-              });
-    } on FirebaseAuthException catch (error) {
-      switch (error.code) {
-        case "invalid-email":
-          errorMessage = "Your email address appears to be malformed.";
-
-          break;
-        case "wrong-password":
-          errorMessage = "Your password is wrong.";
-          break;
-        case "user-not-found":
-          errorMessage = "User with this email doesn't exist.";
-          break;
-        case "user-disabled":
-          errorMessage = "User with this email has been disabled.";
-          break;
-        case "too-many-requests":
-          errorMessage = "Too many requests";
-          break;
-        case "operation-not-allowed":
-          errorMessage = "Signing in with Email and Password is not enabled.";
-          break;
-        default:
-          errorMessage = "An undefined Error happened.";
-      }
-      Fluttertoast.showToast(msg: errorMessage!);
-      print(error.code);
-    }
-  }
-}*/
