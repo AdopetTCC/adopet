@@ -49,13 +49,6 @@ class _RegistrationScreenState extends State<RegisterScreen> {
     _conPasswordController.dispose();
   }
 
-  void selectImage() async {
-    Uint8List im = await pickImage(ImageSource.gallery);
-    setState(() {
-      _image = im;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     //signup button

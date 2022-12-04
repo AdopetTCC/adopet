@@ -7,9 +7,6 @@ class StorageMethods {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseStorage _storage = FirebaseStorage.instance;
 
-class StorageMethods {
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-  final FirebaseStorage _storage = FirebaseStorage.instance;
   // adding image to firebase storage
   Future<String> uploadImageToStorage(
       String childName, Uint8List file, bool isPost) async {
@@ -29,5 +26,4 @@ class StorageMethods {
     String downloadUrl = await snapshot.ref.getDownloadURL();
     return downloadUrl;
   }
-}
 }
