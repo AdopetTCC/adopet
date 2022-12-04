@@ -41,7 +41,7 @@ class _MainScreenState extends State<MainScreen> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.star_border_rounded),
+            icon: Icon(Icons.favorite_rounded),
             label: 'Favoritos',
           ),
           BottomNavigationBarItem(
