@@ -1,5 +1,4 @@
 import 'package:adopet/providers/user_provider.dart';
-import 'package:adopet/screens/animal_screen.dart';
 import 'package:adopet/screens/login_screen.dart';
 import 'package:adopet/screens/onboarding_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -43,18 +42,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  @override
-  void initState() {
-    super.initState();
-    addData();
-  }
-
-  addData() async {
-    UserProvider _userProvider =
-        Provider.of<UserProvider>(context, listen: false);
-    await _userProvider.refreshUser();
-  }
-
   @override
   Widget build(BuildContext context) {
     return MultiProvider(

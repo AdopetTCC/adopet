@@ -1,13 +1,11 @@
+import 'package:adopet/providers/user_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:adopet/models/user.dart' as model;
+import 'package:provider/provider.dart';
 
-class Favoritos extends StatefulWidget {
+class Favoritos extends StatelessWidget {
   const Favoritos({super.key});
 
-  @override
-  State<Favoritos> createState() => _Favoritos();
-}
-
-class _Favoritos extends State<Favoritos> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,11 +15,16 @@ class _Favoritos extends State<Favoritos> {
   }
 }
 
-class CardGato extends StatelessWidget {
+class CardGato extends StatefulWidget {
   const CardGato({
     Key? key,
   }) : super(key: key);
 
+  @override
+  State<CardGato> createState() => _CardGatoState();
+}
+
+class _CardGatoState extends State<CardGato> {
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -63,9 +66,9 @@ class CardGato extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text(
+                            Text(
                               'Gatito',
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontFamily: 'AoboshiOne',
                                 color: Colors.white,
                                 fontSize: 30,

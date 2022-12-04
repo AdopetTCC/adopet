@@ -1,7 +1,9 @@
 import 'package:adopet/pages/animals_page.dart';
 import 'package:adopet/pages/config_page.dart';
 import 'package:adopet/pages/favorites_page.dart';
+import 'package:adopet/providers/user_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../pages/home_page.dart';
 
 class MainScreen extends StatefulWidget {
@@ -25,6 +27,18 @@ class _MainScreenState extends State<MainScreen> {
     setState(() {
       _selectedIndex = index;
     });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    addData();
+  }
+
+  addData() async {
+    UserProvider userProvider =
+        Provider.of<UserProvider>(context, listen: false);
+    await userProvider.refreshUser();
   }
 
   @override

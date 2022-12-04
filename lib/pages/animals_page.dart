@@ -1,11 +1,7 @@
-import 'package:adopet/providers/user_provider.dart';
 import 'package:adopet/utils/utils.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:provider/provider.dart';
-import 'package:adopet/models/user.dart' as model;
 
 class Animais extends StatefulWidget {
   const Animais({super.key});
@@ -57,8 +53,6 @@ class _Animais extends State<Animais> {
 
   @override
   Widget build(BuildContext context) {
-    model.User user = Provider.of<UserProvider>(context).getUser;
-
     return _file == null
         ? Center(
             child: IconButton(
@@ -98,15 +92,10 @@ class _Animais extends State<Animais> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // CircleAvatar(
-                    //   backgroundImage: NetworkImage(
-                    //     //user.photoUrl,
-                    //   ),
-                    // ),
                     SizedBox(
                       width: MediaQuery.of(context).size.width * 0.45,
-                      child: TextField(
-                        decoration: const InputDecoration(
+                      child: const TextField(
+                        decoration: InputDecoration(
                           hintText: "Write a caption...",
                           border: InputBorder.none,
                         ),

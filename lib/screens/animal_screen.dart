@@ -1,9 +1,6 @@
 // ignore_for_file: use_full_hex_values_for_flutter_colors
-import 'package:adopet/providers/user_provider.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:adopet/models/user.dart' as model;
 
 class AnimalScreen extends StatefulWidget {
   const AnimalScreen({super.key});
@@ -15,8 +12,6 @@ class AnimalScreen extends StatefulWidget {
 class _AnimalScreenState extends State<AnimalScreen> {
   @override
   Widget build(BuildContext context) {
-    model.User user = Provider.of<UserProvider>(context).getUser;
-
     return Stack(
       alignment: Alignment.topCenter,
       children: <Widget>[
@@ -43,7 +38,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18),
                         ),
-                        primary: Colors.white,
+                        backgroundColor: Colors.white,
                       ),
                       child: const Icon(
                         Icons.arrow_back_ios_new_rounded,
@@ -59,7 +54,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18),
                         ),
-                        primary: Colors.white,
+                        backgroundColor: Colors.white,
                       ),
                       child: const Icon(
                         Icons.more_horiz_rounded,
@@ -93,8 +88,8 @@ class _AnimalScreenState extends State<AnimalScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            user.name,
+                          const Text(
+                            'Lilico',
                             style: TextStyle(
                               color: Color(0xFF373737),
                               fontFamily: 'AoboshiOne',
@@ -110,7 +105,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                               onPressed: () {},
                               style: ElevatedButton.styleFrom(
                                 shape: const CircleBorder(),
-                                primary: Colors.white,
+                                backgroundColor: Colors.white,
                                 padding: const EdgeInsets.all(16),
                               ),
                               child: const Center(
@@ -284,7 +279,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
-                              primary: Colors.white,
+                              backgroundColor: Colors.white,
                               padding: const EdgeInsets.all(8.3),
                             ),
                             onPressed: () {},
@@ -330,7 +325,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(18),
                                   ),
-                                  primary: Colors.white,
+                                  backgroundColor: Colors.white,
                                 ),
                                 onPressed: () {},
                                 child: const Icon(
@@ -349,7 +344,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(18),
                                   ),
-                                  primary: Colors.white,
+                                  backgroundColor: Colors.white,
                                 ),
                                 onPressed: () {},
                                 child: const Icon(

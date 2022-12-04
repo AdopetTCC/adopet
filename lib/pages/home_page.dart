@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Text(
-                'Filtros',
+                'filtros',
                 style: TextStyle(
                   color: Color(0xFF03063A),
                   fontFamily: 'AoboshiOne',

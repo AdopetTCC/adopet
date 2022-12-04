@@ -1,5 +1,4 @@
 //import 'package:adopet/pages/home_screen.dart';
-import 'package:adopet/pages/home_page.dart';
 import 'package:adopet/screens/choose_screen.dart';
 import 'package:adopet/screens/main_screen.dart';
 import 'package:adopet/utils/utils.dart';
