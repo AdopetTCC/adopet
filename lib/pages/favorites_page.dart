@@ -1,7 +1,7 @@
-import 'package:adopet/widgets/card_gatofav.dart';
+import 'package:adopet/widgets/card_fav.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/card_gato.dart';
+import '../widgets/card.dart';
 
 class Favoritos extends StatefulWidget {
   const Favoritos({super.key});
