@@ -85,7 +85,7 @@ class _Configuracoes extends State<Configuracoes> {
                               : const CircleAvatar(
                                   radius: 80.0,
                                   backgroundImage: NetworkImage(
-                                    "https://pbs.twimg.com/profile_images/1504460447495376902/F-R07xKi_400x400.jpg",
+                                    "https://cdn-icons-png.flaticon.com/512/706/706840.png",
                                   ),
                                   backgroundColor: Colors.transparent,
                                 ),
