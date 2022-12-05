@@ -83,7 +83,7 @@ class _Animais extends State<Animais> {
                               : const CircleAvatar(
                                   radius: 80.0,
                                   backgroundImage: NetworkImage(
-                                    "https://cdn-icons-png.flaticon.com/512/194/194279.png",
+                                    "https://cdn-icons-png.flaticon.com/512/3093/3093444.png",
                                   ),
                                   backgroundColor: Colors.transparent,
                                 ),

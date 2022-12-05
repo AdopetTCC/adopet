@@ -1,9 +1,7 @@
 // ignore_for_file: use_full_hex_values_for_flutter_colors
-import 'package:adopet/providers/user_provider.dart';
+import 'package:adopet/pages/perfil_page.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:adopet/models/user.dart' as model;
 
 class AnimalScreen extends StatefulWidget {
   const AnimalScreen({super.key});
@@ -15,8 +13,6 @@ class AnimalScreen extends StatefulWidget {
 class _AnimalScreenState extends State<AnimalScreen> {
   @override
   Widget build(BuildContext context) {
-    model.User user = Provider.of<UserProvider>(context).getUser;
-
     return Stack(
       alignment: Alignment.topCenter,
       children: <Widget>[
@@ -43,7 +39,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18),
                         ),
-                        primary: Colors.white,
+                        backgroundColor: Colors.white,
                       ),
                       child: const Icon(
                         Icons.arrow_back_ios_new_rounded,
@@ -59,7 +55,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18),
                         ),
-                        primary: Colors.white,
+                        backgroundColor: Colors.white,
                       ),
                       child: const Icon(
                         Icons.more_horiz_rounded,
@@ -93,8 +89,8 @@ class _AnimalScreenState extends State<AnimalScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            user.name,
+                          const Text(
+                            'Lilico',
                             style: TextStyle(
                               color: Color(0xFF373737),
                               fontFamily: 'AoboshiOne',
@@ -110,12 +106,12 @@ class _AnimalScreenState extends State<AnimalScreen> {
                               onPressed: () {},
                               style: ElevatedButton.styleFrom(
                                 shape: const CircleBorder(),
-                                primary: Colors.white,
+                                backgroundColor: Colors.white,
                                 padding: const EdgeInsets.all(16),
                               ),
                               child: const Center(
                                 child: Icon(
-                                  Icons.star,
+                                  Icons.favorite_rounded,
                                   color: Colors.red,
                                 ),
                               ),
@@ -284,7 +280,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
-                              primary: Colors.white,
+                              backgroundColor: Colors.white,
                               padding: const EdgeInsets.all(8.3),
                             ),
                             onPressed: () {},
@@ -330,7 +326,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(18),
                                   ),
-                                  primary: Colors.white,
+                                  backgroundColor: Colors.white,
                                 ),
                                 onPressed: () {},
                                 child: const Icon(
@@ -349,7 +345,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(18),
                                   ),
-                                  primary: Colors.white,
+                                  backgroundColor: Colors.white,
                                 ),
                                 onPressed: () {},
                                 child: const Icon(
@@ -400,7 +396,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                       GestureDetector(
                         child: Container(
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 148.5, vertical: 18),
+                              horizontal: 139, vertical: 18),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
                               gradient: const LinearGradient(
@@ -411,13 +407,19 @@ class _AnimalScreenState extends State<AnimalScreen> {
                                     Color(0xFF3198F4),
                                   ])),
                           child: const Text(
-                            'Adotar',
+                            'Contatar',
                             style: TextStyle(
                               fontFamily: 'AoboshiOne',
                               color: Colors.white,
                               fontSize: 20,
                               decoration: TextDecoration.none,
                             ),
+                          ),
+                        ),
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Configuracoes(),
                           ),
                         ),
                       ),
