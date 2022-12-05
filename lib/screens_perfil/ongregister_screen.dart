@@ -61,11 +61,17 @@ class _OngRegistrationScreenState extends State<OngRegisterScreen> {
           ),
           minimumSize: const Size(330, 67),
         ),
-        onPressed: () {
-          //signUp(emailEditingController.text, passwordEditingController.text);
+        onPressed: () async {
+          String res = await AuthMethods().signUpUser(
+            email: _emailController.text,
+            password: _passwordController.text,
+            name: _ongNameController.text,
+            telefone: _telController.text,
+          );
+          print(res);
         },
         child: const Text(
-          "Login",
+          "Cadastrar",
           textAlign: TextAlign.center,
           style: TextStyle(
               fontSize: 20,

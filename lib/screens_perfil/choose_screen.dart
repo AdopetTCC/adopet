@@ -109,16 +109,88 @@ class ChooseScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-            child: registerButton,
+          Container(
+            decoration: BoxDecoration(
+              gradient: const LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color(0xFF5CB2FF),
+                  Color(0xFF0074FC),
+                ],
+              ),
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.transparent,
+                disabledForegroundColor: Colors.transparent.withOpacity(0.38),
+                disabledBackgroundColor: Colors.transparent.withOpacity(0.12),
+                shadowColor: Colors.transparent,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15), // <-- Radius
+                ),
+                minimumSize: const Size(298, 67),
+              ),
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const RegisterScreen(),
+                ),
+              ),
+              child: const Text(
+                "Pessoa Comum",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                    fontFamily: 'AoboshiOne',
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
           ),
           const SizedBox(
             height: 20,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-            child: ongregisterButton,
+          Container(
+            decoration: BoxDecoration(
+              gradient: const LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color(0xFF5CB2FF),
+                  Color(0xFF0074FC),
+                ],
+              ),
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.transparent,
+                disabledForegroundColor: Colors.transparent.withOpacity(0.38),
+                disabledBackgroundColor: Colors.transparent.withOpacity(0.12),
+                shadowColor: Colors.transparent,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15), // <-- Radius
+                ),
+                minimumSize: const Size(298, 67),
+              ),
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const OngRegisterScreen(),
+                ),
+              ),
+              child: const Text(
+                "ONG",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                    fontFamily: 'AoboshiOne',
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
           ),
           const SizedBox(
             height: 20,
