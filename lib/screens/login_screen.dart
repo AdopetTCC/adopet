@@ -1,4 +1,5 @@
 //import 'package:adopet/pages/home_screen.dart';
+import 'package:adopet/pages/home_page.dart';
 import 'package:adopet/screens/choose_screen.dart';
 import 'package:adopet/screens/main_screen.dart';
 import 'package:adopet/utils/utils.dart';
@@ -40,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       );
     } else {
-      showSnackBar(res, context);
+      showSnackBar(context, res);
     }
   }
 
@@ -82,42 +83,6 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
-
-    /*final cancelButton = Container(
-      decoration: BoxDecoration(
-        gradient: const LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [
-            Color(0xFFFF4E4E),
-            Color(0xFFF31717),
-          ],
-        ),
-        borderRadius: BorderRadius.circular(15),
-      ),
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          primary: Colors.transparent,
-          disabledForegroundColor: Colors.transparent.withOpacity(0.38),
-          disabledprimary: Colors.transparent.withOpacity(0.12),
-          shadowColor: Colors.transparent,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15), // <-- Radius
-          ),
-          minimumSize: const Size(298, 67),
-        ),
-        onPressed: () {},
-        child: const Text(
-          "Cancelar",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-              fontSize: 20,
-              color: Colors.white,
-              fontFamily: 'AoboshiOne',
-              fontWeight: FontWeight.bold),
-        ),
-      ),
-    );*/
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -266,3 +231,44 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
+/*
+// login function
+void signIn(String email, String password) async {
+  if (_formKey.currentState!.validate()) {
+    try {
+      await _auth
+          .signInWithEmailAndPassword(email: email, password: password)
+          .then((uid) => {
+                Fluttertoast.showToast(msg: "Login Successful"),
+                Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (context) => HomeScreen())),
+              });
+    } on FirebaseAuthException catch (error) {
+      switch (error.code) {
+        case "invalid-email":
+          errorMessage = "Your email address appears to be malformed.";
+
+          break;
+        case "wrong-password":
+          errorMessage = "Your password is wrong.";
+          break;
+        case "user-not-found":
+          errorMessage = "User with this email doesn't exist.";
+          break;
+        case "user-disabled":
+          errorMessage = "User with this email has been disabled.";
+          break;
+        case "too-many-requests":
+          errorMessage = "Too many requests";
+          break;
+        case "operation-not-allowed":
+          errorMessage = "Signing in with Email and Password is not enabled.";
+          break;
+        default:
+          errorMessage = "An undefined Error happened.";
+      }
+      Fluttertoast.showToast(msg: errorMessage!);
+      print(error.code);
+    }
+  }
+}*/

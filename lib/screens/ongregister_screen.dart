@@ -1,6 +1,7 @@
 //import 'package:cloud_firestore/cloud_firestore.dart';
 //import 'package:adopet/model/user_model.dart';
 //import 'package:firebase_auth/firebase_auth.dart';
+import 'package:adopet/resources/auth_methods.dart';
 import 'package:adopet/widgets/text_field_input.dart';
 import 'package:flutter/material.dart';
 
@@ -330,7 +331,7 @@ class _OngRegistrationScreenState extends State<OngRegisterScreen> {
               height: 21,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+              padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -339,7 +340,7 @@ class _OngRegistrationScreenState extends State<OngRegisterScreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+              padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

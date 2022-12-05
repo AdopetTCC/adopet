@@ -1,16 +1,9 @@
 //import 'package:cloud_firestore/cloud_firestore.dart';
 //import 'package:adopet/model/user_model.dart';
 //import 'package:firebase_auth/firebase_auth.dart';
-import 'dart:typed_data';
-
 import 'package:adopet/resources/auth_methods.dart';
-import 'package:adopet/utils/utils.dart';
 import 'package:adopet/widgets/text_field_input.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
-
-import '../utils/utils.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -28,16 +21,6 @@ class _RegistrationScreenState extends State<RegisterScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _conPasswordController = TextEditingController();
-  bool _isLoading = false;
-  Uint8List? _image;
-
-  selectImage() async {
-    Uint8List im = await pickImage(ImageSource.gallery);
-    // set state because we need to display the image we selected on the circle avatar
-    setState(() {
-      _image = im;
-    });
-  }
 
   @override
   void dispose() {
@@ -80,8 +63,7 @@ class _RegistrationScreenState extends State<RegisterScreen> {
               email: _emailController.text,
               password: _passwordController.text,
               name: _nameController.text,
-              telefone: _telController.text,
-              file: _image!);
+              telefone: _telController.text);
           print(res);
         },
         child: const Text(
@@ -133,79 +115,54 @@ class _RegistrationScreenState extends State<RegisterScreen> {
     );
 
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Stack(
-              children: [
-                Container(
-                  decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(40),
-                          bottomRight: Radius.circular(40)),
-                      gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [
-                            Color(0xFF5CB2FF),
-                            Color(0xFF0074FC),
-                          ])),
-                  height: 140,
-                  child: const Center(
-                    child: Text(
-                      'Adopet',
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        fontFamily: 'AoboshiOne',
-                        fontSize: 67.57,
-                      ),
+      body: Column(
+        children: [
+          Stack(
+            children: [
+              Container(
+                decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(40),
+                        bottomRight: Radius.circular(40)),
+                    gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          Color(0xFF5CB2FF),
+                          Color(0xFF0074FC),
+                        ])),
+                height: 140,
+                child: const Center(
+                  child: Text(
+                    'Adopet',
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 255, 255, 255),
+                      fontFamily: 'AoboshiOne',
+                      fontSize: 67.57,
                     ),
                   ),
                 ),
-                Positioned(
-                  top: -8,
-                  left: -46,
-                  child: Image.asset('./assets/icons/pata1.png'),
-                ),
-                Positioned(
-                  bottom: 45,
-                  right: -50,
-                  child: Image.asset('./assets/icons/pata4.png'),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 35,
-            ),
-            Form(
-              key: _formKey,
+              ),
+              Positioned(
+                top: -8,
+                left: -46,
+                child: Image.asset('./assets/icons/pata1.png'),
+              ),
+              Positioned(
+                bottom: 45,
+                right: -50,
+                child: Image.asset('./assets/icons/pata4.png'),
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 25,
+          ),
+          Form(
+            key: _formKey,
+            child: SingleChildScrollView(
               child: Column(
                 children: [
-                  Stack(
-                    children: [
-                      _image != null
-                          ? CircleAvatar(
-                              radius: 64,
-                              backgroundImage: MemoryImage(_image!),
-                            )
-                          : const CircleAvatar(
-                              radius: 64,
-                              backgroundImage: NetworkImage(
-                                  "https://pbs.twimg.com/profile_images/1504460447495376902/F-R07xKi_400x400.jpg"),
-                            ),
-                      Positioned(
-                        bottom: -10,
-                        left: 80,
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.add_a_photo),
-                        ),
-                      )
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 35,
-                  ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 50),
                     child: Column(
@@ -365,12 +322,11 @@ class _RegistrationScreenState extends State<RegisterScreen> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 40),
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
