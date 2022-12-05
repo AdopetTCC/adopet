@@ -43,7 +43,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18),
                         ),
-                        primary: Colors.white,
+                        backgroundColor: Colors.white,
                       ),
                       child: const Icon(
                         Icons.arrow_back_ios_new_rounded,
@@ -59,7 +59,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18),
                         ),
-                        primary: Colors.white,
+                        backgroundColor: Colors.white,
                       ),
                       child: const Icon(
                         Icons.more_horiz_rounded,
@@ -95,7 +95,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                         children: [
                           Text(
                             user.name,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Color(0xFF373737),
                               fontFamily: 'AoboshiOne',
                               fontSize: 26,
@@ -110,12 +110,12 @@ class _AnimalScreenState extends State<AnimalScreen> {
                               onPressed: () {},
                               style: ElevatedButton.styleFrom(
                                 shape: const CircleBorder(),
-                                primary: Colors.white,
+                                backgroundColor: Colors.white,
                                 padding: const EdgeInsets.all(16),
                               ),
                               child: const Center(
                                 child: Icon(
-                                  Icons.star,
+                                  Icons.favorite_rounded,
                                   color: Colors.red,
                                 ),
                               ),
@@ -284,7 +284,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               shape: const CircleBorder(),
-                              primary: Colors.white,
+                              backgroundColor: Colors.white,
                               padding: const EdgeInsets.all(8.3),
                             ),
                             onPressed: () {},
@@ -330,7 +330,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(18),
                                   ),
-                                  primary: Colors.white,
+                                  backgroundColor: Colors.white,
                                 ),
                                 onPressed: () {},
                                 child: const Icon(
@@ -349,7 +349,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(18),
                                   ),
-                                  primary: Colors.white,
+                                  backgroundColor: Colors.white,
                                 ),
                                 onPressed: () {},
                                 child: const Icon(
