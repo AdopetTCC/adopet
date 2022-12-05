@@ -75,7 +75,7 @@ class _MyAppState extends State<MyApp> {
               ),
             ),
           ),
-          home: const LoginScreen()
+          home: const AnimalScreen()
           //widget.showHome ? const LoginScreen() : const OnboardScreen(),
           ),
     );

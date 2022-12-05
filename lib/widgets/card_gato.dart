@@ -1,3 +1,4 @@
+import 'package:adopet/screens_perfil/animal_screen.dart';
 import 'package:flutter/material.dart';
 
 class CardAnimal extends StatelessWidget {
@@ -29,12 +30,20 @@ class CardAnimal extends StatelessWidget {
           children: [
             Stack(
               children: [
-                SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  height: 270,
-                  child: Image(
-                    image: AssetImage(animal),
-                    fit: BoxFit.cover,
+                GestureDetector(
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width,
+                    height: 270,
+                    child: Image(
+                      image: AssetImage(animal),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const AnimalScreen(),
+                    ),
                   ),
                 ),
                 Padding(
