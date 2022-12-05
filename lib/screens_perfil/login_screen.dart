@@ -1,7 +1,7 @@
 //import 'package:adopet/pages/home_screen.dart';
 import 'package:adopet/pages/home_page.dart';
-import 'package:adopet/screens/choose_screen.dart';
-import 'package:adopet/screens/main_screen.dart';
+import 'package:adopet/screens_perfil/choose_screen.dart';
+import 'package:adopet/screens_perfil/main_screen.dart';
 import 'package:adopet/utils/utils.dart';
 import 'package:adopet/widgets/text_field_input.dart';
 //import 'package:firebase_auth/firebase_auth.dart';

@@ -1,9 +1,7 @@
 // ignore_for_file: depend_on_referenced_packages
 
 import 'dart:io';
-import 'package:adopet/screens/main_screen.dart';
 import 'package:path/path.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:adopet/screens/register_screen.dart';
-import 'package:adopet/screens/ongregister_screen.dart';
+import 'package:adopet/screens_perfil/register_screen.dart';
+import 'package:adopet/screens_perfil/ongregister_screen.dart';
 
 class ChooseScreen extends StatelessWidget {
   const ChooseScreen({Key? key}) : super(key: key);
