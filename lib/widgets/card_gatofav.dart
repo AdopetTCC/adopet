@@ -1,18 +1,18 @@
 import 'package:adopet/screens_perfil/animal_screen.dart';
 import 'package:flutter/material.dart';
 
-class CardAnimal extends StatelessWidget {
-  final String animal;
-  final String nomeAnimal;
-  final String localizacao;
-  final String imgDono;
+class CardAnimalFav extends StatelessWidget {
+  final String animalfav;
+  final String nomeAnimalfav;
+  final String localizacaofav;
+  final String imgDonofav;
 
-  const CardAnimal({
+  const CardAnimalFav({
     Key? key,
-    required this.animal,
-    required this.nomeAnimal,
-    required this.localizacao,
-    required this.imgDono,
+    required this.animalfav,
+    required this.nomeAnimalfav,
+    required this.localizacaofav,
+    required this.imgDonofav,
   }) : super(key: key);
 
   @override
@@ -35,7 +35,7 @@ class CardAnimal extends StatelessWidget {
                     width: MediaQuery.of(context).size.width,
                     height: 270,
                     child: Image(
-                      image: AssetImage(animal),
+                      image: AssetImage(animalfav),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -67,7 +67,7 @@ class CardAnimal extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                nomeAnimal,
+                                nomeAnimalfav,
                                 style: const TextStyle(
                                   fontFamily: 'AoboshiOne',
                                   color: Colors.white,
@@ -85,7 +85,7 @@ class CardAnimal extends StatelessWidget {
                                     color: Color(0xFF5AA9EF),
                                   ),
                                   Text(
-                                    localizacao,
+                                    localizacaofav,
                                     style: const TextStyle(
                                       color: Color(0xFF0074FC),
                                       fontFamily: 'AoboshiOne',
@@ -107,7 +107,7 @@ class CardAnimal extends StatelessWidget {
                             child: CircleAvatar(
                               radius: 30,
                               backgroundImage: AssetImage(
-                                imgDono,
+                                imgDonofav,
                               ),
                             ),
                           ),
@@ -128,7 +128,7 @@ class CardAnimal extends StatelessWidget {
                     ),
                     child: const Center(
                       child: Icon(
-                        Icons.favorite_border_rounded,
+                        Icons.favorite_rounded,
                         color: Colors.red,
                       ),
                     ),

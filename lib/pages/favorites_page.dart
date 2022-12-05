@@ -1,3 +1,4 @@
+import 'package:adopet/widgets/card_gatofav.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/card_gato.dart';
@@ -43,23 +44,23 @@ class _Favoritos extends State<Favoritos> {
                   ],
                 ),
               ),
-              const CardAnimal(
-                animal: './assets/images/cat.png',
-                imgDono: './assets/images/cat.png',
-                localizacao: 'Americana',
-                nomeAnimal: 'Gato',
+              const CardAnimalFav(
+                animalfav: './assets/images/cat.png',
+                imgDonofav: './assets/images/cat.png',
+                localizacaofav: 'Americana',
+                nomeAnimalfav: 'Gato',
               ),
-              const CardAnimal(
-                animal: './assets/images/sandro.png',
-                imgDono: './assets/images/sandro.png',
-                localizacao: 'Americana',
-                nomeAnimal: 'Sandro',
+              const CardAnimalFav(
+                animalfav: './assets/images/sandro.png',
+                imgDonofav: './assets/images/sandro.png',
+                localizacaofav: 'Americana',
+                nomeAnimalfav: 'Sandro',
               ),
-              const CardAnimal(
-                animal: './assets/images/sandro.png',
-                imgDono: './assets/images/cat.png',
-                localizacao: 'Americana',
-                nomeAnimal: 'gasandroto',
+              const CardAnimalFav(
+                animalfav: './assets/images/sandro.png',
+                imgDonofav: './assets/images/cat.png',
+                localizacaofav: 'Americana',
+                nomeAnimalfav: 'gasandroto',
               ),
             ],
           ),

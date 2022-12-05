@@ -1,3 +1,4 @@
+import 'package:adopet/screens_perfil/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:adopet/screens_perfil/register_screen.dart';
 import 'package:adopet/screens_perfil/ongregister_screen.dart';
@@ -112,7 +113,12 @@ class ChooseScreen extends StatelessWidget {
           ),
           minimumSize: const Size(298, 67),
         ),
-        onPressed: () {},
+        onPressed: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const LoginScreen(),
+          ),
+        ),
         child: const Text(
           "Cancelar",
           textAlign: TextAlign.center,

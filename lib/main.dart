@@ -1,3 +1,4 @@
+import 'package:adopet/pages/perfil_page.dart';
 import 'package:adopet/screens_perfil/animal_screen.dart';
 import 'package:adopet/providers/user_provider.dart';
 import 'package:adopet/screens_perfil/Choose_screen.dart';
@@ -75,7 +76,7 @@ class _MyAppState extends State<MyApp> {
               ),
             ),
           ),
-          home: const ChooseScreen()
+          home: const Configuracoes()
           //widget.showHome ? const LoginScreen() : const OnboardScreen(),
           ),
     );
