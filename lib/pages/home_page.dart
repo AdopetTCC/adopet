@@ -1,6 +1,7 @@
 import 'package:adopet/screens_perfil/main_cat_screen.dart';
 import 'package:adopet/screens_perfil/main_dog_screen.dart';
 import 'package:adopet/screens_perfil/main_screen.dart';
+import 'package:adopet/widgets/card_fav.dart';
 import 'package:flutter/material.dart';
 import '../widgets/card.dart';
 
@@ -200,41 +201,41 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const CardAnimal(
-                animal: './assets/images/babidi.jpg',
-                imgDono: './assets/images/sandro.png',
-                localizacao: 'Americana',
-                nomeAnimal: 'Babidi',
+              const CardAnimalFav(
+                animalfav: 'images/babidi.jpg',
+                imgDonofav: './assets/images/sandro.png',
+                localizacaofav: "Santa Bárbara d'Oeste",
+                nomeAnimalfav: 'Babidi',
               ),
               const CardAnimal(
-                animal: './assets/images/paçoca.jpg',
-                imgDono: './assets/images/cat.png',
+                animal: 'images/pacoca.jpg',
+                imgDono: 'images/mulher1.jpg',
                 localizacao: 'Americana',
                 nomeAnimal: 'Paçoca',
               ),
-              const CardAnimal(
-                animal: './assets/images/malhado.jpg',
-                imgDono: './assets/images/cat.png',
-                localizacao: 'Americana',
-                nomeAnimal: 'Malhado',
+              const CardAnimalFav(
+                animalfav: 'images/malhado.jpg',
+                imgDonofav: 'images/mulher2.jpg',
+                localizacaofav: 'Americana',
+                nomeAnimalfav: 'Malhado',
               ),
               const CardAnimal(
-                animal: './assets/images/branquinha.jpg',
-                imgDono: './assets/images/cat.png',
+                animal: 'images/branquinha.jpg',
+                imgDono: 'images/cara2.jpg',
                 localizacao: 'Americana',
                 nomeAnimal: 'Branquinha',
               ),
               const CardAnimal(
-                animal: './assets/images/luke.png',
-                imgDono: './assets/images/cat.png',
-                localizacao: 'Americana',
+                animal: 'images/luke.png',
+                imgDono: 'images/cara1.jpg',
+                localizacao: 'Nova Odessa',
                 nomeAnimal: 'Luke',
               ),
-              const CardAnimal(
-                animal: './assets/images/januario.jpeg',
-                imgDono: './assets/images/cat.png',
-                localizacao: 'Americana',
-                nomeAnimal: 'Januário',
+              const CardAnimalFav(
+                animalfav: 'images/januario.jpeg',
+                imgDonofav: 'images/cara2.jpg',
+                localizacaofav: 'Americana',
+                nomeAnimalfav: 'Januário',
               ),
             ],
           ),

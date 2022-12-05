@@ -27,16 +27,14 @@ class _Favoritos extends State<Favoritos> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(
-                      child: const Text(
-                        'Animais Favoritos',
-                        style: TextStyle(
-                          color: Color(0xFF373737),
-                          fontFamily: 'AoboshiOne',
-                          fontSize: 26,
-                        ),
-                        textAlign: TextAlign.start,
+                    const Text(
+                      'Animais Favoritos',
+                      style: TextStyle(
+                        color: Color(0xFF373737),
+                        fontFamily: 'AoboshiOne',
+                        fontSize: 26,
                       ),
+                      textAlign: TextAlign.start,
                     ),
                     Row(
                       children: const [],
@@ -45,22 +43,22 @@ class _Favoritos extends State<Favoritos> {
                 ),
               ),
               const CardAnimalFav(
-                animalfav: './assets/images/cat.png',
-                imgDonofav: './assets/images/cat.png',
-                localizacaofav: 'Americana',
-                nomeAnimalfav: 'Gato',
-              ),
-              const CardAnimalFav(
-                animalfav: './assets/images/sandro.png',
+                animalfav: 'images/babidi.jpg',
                 imgDonofav: './assets/images/sandro.png',
                 localizacaofav: 'Americana',
-                nomeAnimalfav: 'Sandro',
+                nomeAnimalfav: 'Babidi',
               ),
               const CardAnimalFav(
-                animalfav: './assets/images/sandro.png',
-                imgDonofav: './assets/images/cat.png',
+                animalfav: 'images/malhado.jpg',
+                imgDonofav: 'images/mulher2.jpg',
                 localizacaofav: 'Americana',
-                nomeAnimalfav: 'gasandroto',
+                nomeAnimalfav: 'Malhado',
+              ),
+              const CardAnimalFav(
+                animalfav: 'images/januario.jpeg',
+                imgDonofav: 'images/cara2.jpg',
+                localizacaofav: 'Americana',
+                nomeAnimalfav: 'Januário',
               ),
             ],
           ),

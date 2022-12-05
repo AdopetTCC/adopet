@@ -4,6 +4,7 @@ import 'package:adopet/screens_perfil/main_dog_screen.dart';
 import 'package:adopet/screens_perfil/main_screen.dart';
 import 'package:flutter/material.dart';
 import '../widgets/card.dart';
+import '../widgets/card_fav.dart';
 
 class HomeScreenCat extends StatelessWidget {
   const HomeScreenCat({
@@ -200,17 +201,23 @@ class HomeScreenCat extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const CardAnimal(
-              animal: './assets/images/cat.png',
-              imgDono: './assets/images/sandro.png',
-              localizacao: 'Americana',
-              nomeAnimal: 'Gatito',
+            const CardAnimalFav(
+              animalfav: 'images/babidi.jpg',
+              imgDonofav: './assets/images/sandro.png',
+              localizacaofav: "Santa Bárbara d'Oeste",
+              nomeAnimalfav: 'Babidi',
             ),
             const CardAnimal(
-              animal: './assets/images/sandro.png',
-              imgDono: './assets/images/cat.png',
+              animal: 'images/branquinha.jpg',
+              imgDono: 'images/cara2.jpg',
               localizacao: 'Americana',
-              nomeAnimal: 'Sandro',
+              nomeAnimal: 'Branquinha',
+            ),
+            const CardAnimalFav(
+              animalfav: 'images/januario.jpeg',
+              imgDonofav: 'images/cara2.jpg',
+              localizacaofav: 'Americana',
+              nomeAnimalfav: 'Januário',
             ),
           ],
         ),
