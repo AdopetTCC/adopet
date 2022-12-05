@@ -45,7 +45,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                         Icons.arrow_back_ios_new_rounded,
                         color: Color(0xFF03063A),
                       ),
-                      onPressed: () {},
+                      onPressed: () => Navigator.of(context).pop(),
                     ),
                   ),
                   SizedBox(
