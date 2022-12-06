@@ -341,7 +341,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                       GestureDetector(
                         child: Container(
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 139, vertical: 18),
+                              horizontal: 137, vertical: 18),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
                               gradient: const LinearGradient(
@@ -361,7 +361,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                             ),
                           ),
                         ),
-                        onTap: () => Navigator.push(
+                        onTap: () => Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                             builder: (context) => const Configuracoes(),
