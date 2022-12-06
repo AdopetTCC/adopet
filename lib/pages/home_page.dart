@@ -196,11 +196,11 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const CardAnimalFav(
-                animalfav: './assets/images/babidi.jpg',
-                imgDonofav: './assets/images/sandro.png',
-                localizacaofav: "Santa Bárbara d'Oeste",
-                nomeAnimalfav: 'Babidi',
+              const CardAnimal(
+                animal: './assets/images/babidi.jpg',
+                imgDono: './assets/images/sandro.png',
+                localizacao: "Santa Bárbara d'Oeste",
+                nomeAnimal: 'Babidi',
               ),
               const CardAnimal(
                 animal: './assets/images/pacoca.jpg',
@@ -208,11 +208,11 @@ class HomeScreen extends StatelessWidget {
                 localizacao: 'Americana',
                 nomeAnimal: 'Paçoca',
               ),
-              const CardAnimalFav(
-                animalfav: './assets/images/malhado.jpg',
-                imgDonofav: './assets/images/mulher2.jpg',
-                localizacaofav: 'Americana',
-                nomeAnimalfav: 'Malhado',
+              const CardAnimal(
+                animal: './assets/images/malhado.jpg',
+                imgDono: './assets/images/mulher2.jpg',
+                localizacao: 'Americana',
+                nomeAnimal: 'Malhado',
               ),
               const CardAnimal(
                 animal: './assets/images/branquinha.jpg',
@@ -226,11 +226,11 @@ class HomeScreen extends StatelessWidget {
                 localizacao: 'Nova Odessa',
                 nomeAnimal: 'Luke',
               ),
-              const CardAnimalFav(
-                animalfav: './assets/images/januario.jpeg',
-                imgDonofav: './assets/images/cara2.jpg',
-                localizacaofav: 'Americana',
-                nomeAnimalfav: 'Januário',
+              const CardAnimal(
+                animal: './assets/images/januario.jpeg',
+                imgDono: './assets/images/cara2.jpg',
+                localizacao: 'Americana',
+                nomeAnimal: 'Januário',
               ),
             ],
           ),

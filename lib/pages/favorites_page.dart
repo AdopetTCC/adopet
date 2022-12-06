@@ -48,18 +48,6 @@ class _Favoritos extends State<Favoritos> {
                 localizacaofav: 'Americana',
                 nomeAnimalfav: 'Babidi',
               ),
-              const CardAnimalFav(
-                animalfav: './assets/images/malhado.jpg',
-                imgDonofav: './assets/images/mulher2.jpg',
-                localizacaofav: 'Americana',
-                nomeAnimalfav: 'Malhado',
-              ),
-              const CardAnimalFav(
-                animalfav: './assets/images/januario.jpeg',
-                imgDonofav: './assets/images/cara2.jpg',
-                localizacaofav: 'Americana',
-                nomeAnimalfav: 'Januário',
-              ),
             ],
           ),
         ),

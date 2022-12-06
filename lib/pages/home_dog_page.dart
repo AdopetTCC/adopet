@@ -1,6 +1,7 @@
 import 'package:adopet/pages/home_cat_page.dart';
 import 'package:adopet/screens_perfil/main_cat_screen.dart';
 import 'package:adopet/screens_perfil/main_dog_screen.dart';
+import 'package:adopet/screens_perfil/main_fav_screen.dart';
 import 'package:adopet/screens_perfil/main_screen.dart';
 import 'package:flutter/material.dart';
 import '../widgets/card.dart';
@@ -90,7 +91,7 @@ class HomeScreenDog extends StatelessWidget {
                         onPressed: () => Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const MainScreen(),
+                            builder: (context) => const MainFavScreen(),
                           ),
                         ),
                         style: ButtonStyle(
@@ -202,11 +203,11 @@ class HomeScreenDog extends StatelessWidget {
               localizacao: 'Americana',
               nomeAnimal: 'Paçoca',
             ),
-            const CardAnimalFav(
-              animalfav: './assets/images/malhado.jpg',
-              imgDonofav: './assets/images/mulher2.jpg',
-              localizacaofav: 'Americana',
-              nomeAnimalfav: 'Malhado',
+            const CardAnimal(
+              animal: './assets/images/malhado.jpg',
+              imgDono: './assets/images/mulher2.jpg',
+              localizacao: 'Americana',
+              nomeAnimal: 'Malhado',
             ),
             const CardAnimal(
               animal: './assets/images/luke.png',

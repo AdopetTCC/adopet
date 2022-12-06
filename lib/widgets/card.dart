@@ -1,4 +1,5 @@
 import 'package:adopet/screens_perfil/animal_screen.dart';
+import 'package:adopet/screens_perfil/main_fav_screen.dart';
 import 'package:flutter/material.dart';
 
 class CardAnimal extends StatelessWidget {
@@ -120,7 +121,12 @@ class CardAnimal extends StatelessWidget {
                   top: 20,
                   right: 20,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () => Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MainFavScreen(),
+                      ),
+                    ),
                     style: ElevatedButton.styleFrom(
                       shape: const CircleBorder(),
                       backgroundColor: Colors.white,
