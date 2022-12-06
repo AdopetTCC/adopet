@@ -1,10 +1,10 @@
 import 'dart:io';
+import 'package:adopet/screens_perfil/main_post_screen.dart';
 import 'package:path/path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
-
 import '../utils/utils.dart';
 
 class Animais extends StatefulWidget {
@@ -199,7 +199,7 @@ class _Animais extends State<Animais> {
                 Container(
                   width: MediaQuery.of(context).size.width,
                   color: Colors.white,
-                  height: MediaQuery.of(context).size.height / 2,
+                  height: MediaQuery.of(context).size.height / 1,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 15,
@@ -268,7 +268,7 @@ class _Animais extends State<Animais> {
                                         hintStyle: TextStyle(
                                           fontFamily: 'AoboshiOne',
                                           color: Color.fromRGBO(0, 0, 0, .6),
-                                          fontSize: 18,
+                                          fontSize: 15,
                                         ),
                                         fillColor: Colors.white30,
                                         filled: true,
@@ -297,7 +297,7 @@ class _Animais extends State<Animais> {
                                         hintStyle: TextStyle(
                                           fontFamily: 'AoboshiOne',
                                           color: Color.fromRGBO(0, 0, 0, .6),
-                                          fontSize: 18,
+                                          fontSize: 15,
                                         ),
                                         fillColor: Colors.white30,
                                         filled: true,
@@ -330,9 +330,12 @@ class _Animais extends State<Animais> {
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(0, 45),
               ),
-              onPressed: () {
-                //TODO: manda pra tela do post falso
-              },
+              onPressed: () => Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const MainPostScreen(),
+                ),
+              ),
               child: const Text(
                 'Publicar',
                 style: TextStyle(
