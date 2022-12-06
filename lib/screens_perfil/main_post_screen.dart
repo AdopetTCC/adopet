@@ -10,7 +10,6 @@ class MainPostScreen extends StatefulWidget {
 
   static const List<Widget> _widgetOptions = <Widget>[
     HomePostScreen(),
-    Favoritos(),
     Animais(),
     Configuracoes(),
   ];

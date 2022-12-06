@@ -197,8 +197,14 @@ class _Animais extends State<Animais> {
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  color: Colors.white,
                   height: MediaQuery.of(context).size.height / 1,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(30),
+                      topRight: Radius.circular(30),
+                    ),
+                  ),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 15,
