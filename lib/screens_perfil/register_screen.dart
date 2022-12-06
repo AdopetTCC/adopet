@@ -2,6 +2,7 @@
 //import 'package:adopet/model/user_model.dart';
 //import 'package:firebase_auth/firebase_auth.dart';
 import 'package:adopet/resources/auth_methods.dart';
+import 'package:adopet/screens_perfil/choose_screen.dart';
 import 'package:adopet/widgets/text_field_input.dart';
 import 'package:flutter/material.dart';
 import 'package:adopet/screens_perfil/main_screen.dart';
@@ -122,218 +123,183 @@ class _RegistrationScreenState extends State<RegisterScreen> {
     );
 
     return Scaffold(
-      body: Column(
-        children: [
-          Stack(
-            children: [
-              Container(
-                decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(40),
-                        bottomRight: Radius.circular(40)),
-                    gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        colors: [
-                          Color(0xFF5CB2FF),
-                          Color(0xFF0074FC),
-                        ])),
-                height: 140,
-                child: const Center(
-                  child: Text(
-                    'Adopet',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 255, 255, 255),
-                      fontFamily: 'AoboshiOne',
-                      fontSize: 67.57,
+      appBar: appBarDefault(),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 25,
+            ),
+            Form(
+              key: _formKey,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 50),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'Nome:',
+                            style: TextStyle(
+                              color: Color(0xFF373737),
+                              fontFamily: 'AoboshiOne',
+                              fontSize: 16.7,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 06,
+                          ),
+                          TextFieldInput(
+                              textEditingController: _nameController,
+                              hintText: 'Nome',
+                              textInputType: TextInputType.name),
+                        ],
+                      ),
                     ),
-                  ),
+                    const SizedBox(
+                      height: 14,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 50),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'Telefone:',
+                            style: TextStyle(
+                              color: Color(0xFF373737),
+                              fontFamily: 'AoboshiOne',
+                              fontSize: 16.7,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 06,
+                          ),
+                          TextFieldInput(
+                              textEditingController: _telController,
+                              hintText: 'Telefone',
+                              textInputType: TextInputType.number),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 14,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 50),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'E-mail:',
+                            style: TextStyle(
+                              color: Color(0xFF373737),
+                              fontFamily: 'AoboshiOne',
+                              fontSize: 16.7,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 06,
+                          ),
+                          TextFieldInput(
+                              textEditingController: _emailController,
+                              hintText: 'E-mail',
+                              textInputType: TextInputType.emailAddress),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 14,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 50),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'Senha:',
+                            style: TextStyle(
+                              color: Color(0xFF373737),
+                              fontFamily: 'AoboshiOne',
+                              fontSize: 16.7,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 06,
+                          ),
+                          TextFieldInput(
+                            textEditingController: _passwordController,
+                            hintText: 'Senha',
+                            textInputType: TextInputType.text,
+                            isPass: true,
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 14,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 50),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text(
+                            'Confirmar Senha:',
+                            style: TextStyle(
+                              color: Color(0xFF373737),
+                              fontFamily: 'AoboshiOne',
+                              fontSize: 16.7,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 06,
+                          ),
+                          TextFieldInput(
+                            textEditingController: _conPasswordController,
+                            hintText: 'Confirmar Senha',
+                            textInputType: TextInputType.text,
+                            isPass: true,
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 21,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 50, vertical: 15),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          signUpButton,
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 50, vertical: 15),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          cancelButton,
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              Positioned(
-                top: -8,
-                left: -46,
-                child: Image.asset('./assets/icons/pata1.png'),
-              ),
-              Positioned(
-                bottom: 45,
-                right: -50,
-                child: Image.asset('./assets/icons/pata4.png'),
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 25,
-          ),
-          Form(
-            key: _formKey,
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 50),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          'Nome:',
-                          style: TextStyle(
-                            color: Color(0xFF373737),
-                            fontFamily: 'AoboshiOne',
-                            fontSize: 16.7,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 06,
-                        ),
-                        TextFieldInput(
-                            textEditingController: _nameController,
-                            hintText: 'Nome',
-                            textInputType: TextInputType.name),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 14,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 50),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          'Telefone:',
-                          style: TextStyle(
-                            color: Color(0xFF373737),
-                            fontFamily: 'AoboshiOne',
-                            fontSize: 16.7,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 06,
-                        ),
-                        TextFieldInput(
-                            textEditingController: _telController,
-                            hintText: 'Telefone',
-                            textInputType: TextInputType.number),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 14,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 50),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          'E-mail:',
-                          style: TextStyle(
-                            color: Color(0xFF373737),
-                            fontFamily: 'AoboshiOne',
-                            fontSize: 16.7,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 06,
-                        ),
-                        TextFieldInput(
-                            textEditingController: _emailController,
-                            hintText: 'E-mail',
-                            textInputType: TextInputType.emailAddress),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 14,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 50),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          'Senha:',
-                          style: TextStyle(
-                            color: Color(0xFF373737),
-                            fontFamily: 'AoboshiOne',
-                            fontSize: 16.7,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 06,
-                        ),
-                        TextFieldInput(
-                          textEditingController: _passwordController,
-                          hintText: 'Senha',
-                          textInputType: TextInputType.text,
-                          isPass: true,
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 14,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 50),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          'Confirmar Senha:',
-                          style: TextStyle(
-                            color: Color(0xFF373737),
-                            fontFamily: 'AoboshiOne',
-                            fontSize: 16.7,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 06,
-                        ),
-                        TextFieldInput(
-                          textEditingController: _conPasswordController,
-                          hintText: 'Confirmar Senha',
-                          textInputType: TextInputType.text,
-                          isPass: true,
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 21,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 50, vertical: 15),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        signUpButton,
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 50, vertical: 15),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        cancelButton,
-                      ],
-                    ),
-                  ),
-                ],
-              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

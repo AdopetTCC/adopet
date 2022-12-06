@@ -84,49 +84,12 @@ class _LoginScreenState extends State<LoginScreen> {
     );
 
     return Scaffold(
+      appBar: appBarDefault(),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Stack(
-              children: [
-                Container(
-                  decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(40),
-                          bottomRight: Radius.circular(40)),
-                      gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [
-                            Color(0xFF5CB2FF),
-                            Color(0xFF0074FC),
-                          ])),
-                  height: 140,
-                  child: const Center(
-                    child: Text(
-                      'Adopet',
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        fontFamily: 'AoboshiOne',
-                        fontSize: 67.57,
-                      ),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  top: -8,
-                  left: -46,
-                  child: Image.asset('./assets/icons/pata1.png'),
-                ),
-                Positioned(
-                  bottom: 45,
-                  right: -50,
-                  child: Image.asset('./assets/icons/pata4.png'),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 45,
+            SizedBox(
+              height: 20,
             ),
             Form(
               key: _formKey,

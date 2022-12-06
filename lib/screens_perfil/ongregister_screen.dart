@@ -2,6 +2,7 @@
 //import 'package:adopet/model/user_model.dart';
 //import 'package:firebase_auth/firebase_auth.dart';
 import 'package:adopet/resources/auth_methods.dart';
+import 'package:adopet/screens_perfil/choose_screen.dart';
 import 'package:adopet/widgets/text_field_input.dart';
 import 'package:flutter/material.dart';
 import 'package:adopet/screens_ong/ongmain_screen.dart';
@@ -125,47 +126,10 @@ class _OngRegistrationScreenState extends State<OngRegisterScreen> {
     );
 
     return Scaffold(
+      appBar: appBarDefault(),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Stack(
-              children: [
-                Container(
-                  decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(40),
-                          bottomRight: Radius.circular(40)),
-                      gradient: LinearGradient(
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                          colors: [
-                            Color(0xFF5CB2FF),
-                            Color(0xFF0074FC),
-                          ])),
-                  height: 140,
-                  child: const Center(
-                    child: Text(
-                      'Adopet',
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        fontFamily: 'AoboshiOne',
-                        fontSize: 67.57,
-                      ),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  top: -8,
-                  left: -46,
-                  child: Image.asset('./assets/icons/pata1.png'),
-                ),
-                Positioned(
-                  bottom: 45,
-                  right: -50,
-                  child: Image.asset('./assets/icons/pata4.png'),
-                ),
-              ],
-            ),
             const SizedBox(
               height: 25,
             ),
