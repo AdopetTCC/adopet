@@ -5,6 +5,8 @@ import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
 
+import '../utils/utils.dart';
+
 class Animais extends StatefulWidget {
   const Animais({super.key});
 
@@ -191,19 +193,318 @@ class _Animais extends State<Animais> {
                     ],
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 20),
-                  child: Text(
-                    'Teuku Myadora',
-                    style: TextStyle(
-                      fontSize: 35,
-                      letterSpacing: 1,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
+                const SizedBox(
+                  height: 25,
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  color: Colors.white,
+                  height: MediaQuery.of(context).size.height / 2,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 15,
+                      vertical: 5,
+                    ),
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 5),
+                          child: Column(
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  btnCachorro(texto: 'Nome'),
+                                ],
+                              ),
+                              SizedBox(height: 20),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: [
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      DropdownButtonExample(),
+                                    ],
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      btnIdade(),
+                                    ],
+                                  ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      btnPorte(),
+                                    ],
+                                  )
+                                ],
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    height: 15,
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Material(
+                                    elevation: 4,
+                                    shadowColor: Colors.grey,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: TextFormField(
+                                      minLines: 3,
+                                      maxLines: 8,
+                                      decoration: InputDecoration(
+                                        hintText: 'Descrição',
+                                        hintStyle: TextStyle(
+                                          fontFamily: 'AoboshiOne',
+                                          color: Color.fromRGBO(0, 0, 0, .6),
+                                          fontSize: 18,
+                                        ),
+                                        fillColor: Colors.white30,
+                                        filled: true,
+                                        border: OutlineInputBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                          borderSide: BorderSide.none,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 15,
+                                  ),
+                                  Material(
+                                    elevation: 4,
+                                    shadowColor: Colors.grey,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: TextFormField(
+                                      minLines: 3,
+                                      maxLines: 8,
+                                      decoration: InputDecoration(
+                                        hintText: 'Informações para Contato',
+                                        hintStyle: TextStyle(
+                                          fontFamily: 'AoboshiOne',
+                                          color: Color.fromRGBO(0, 0, 0, .6),
+                                          fontSize: 18,
+                                        ),
+                                        fillColor: Colors.white30,
+                                        filled: true,
+                                        border: OutlineInputBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                          borderSide: BorderSide.none,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                        )
+                      ],
                     ),
                   ),
                 ),
               ],
+            ),
+          ),
+        ),
+        bottomNavigationBar: Container(
+          color: Colors.white,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(0, 45),
+              ),
+              onPressed: () {
+                //TODO: manda pra tela do post falso
+              },
+              child: const Text(
+                'Publicar',
+                style: TextStyle(
+                  fontFamily: 'AoboshiOne',
+                  color: Colors.white,
+                  fontSize: 18,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+List<String> listSexo = <String>['Sexo', 'Masculino', 'Feminino'];
+List<String> listIdade = <String>[
+  'Idade',
+  '0',
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+  '9',
+  '10'
+];
+List<String> listPorte = <String>['Porte', 'Pequeno', 'Médio', 'Grande'];
+
+class DropdownButtonExample extends StatefulWidget {
+  const DropdownButtonExample({super.key});
+
+  @override
+  State<DropdownButtonExample> createState() => _DropdownButtonExampleState();
+}
+
+class _DropdownButtonExampleState extends State<DropdownButtonExample> {
+  String dropdownValue = listSexo.first;
+
+  @override
+  Widget build(BuildContext context) {
+    return DropdownButton<String>(
+      value: dropdownValue,
+      icon: const Icon(Icons.arrow_drop_down_sharp),
+      elevation: 16,
+      style: const TextStyle(color: Color.fromRGBO(0, 0, 0, .8)),
+      underline: Container(
+        height: 2,
+        color: Colors.lightBlue,
+      ),
+      onChanged: (String? value) {
+        // This is called when the user selects an item.
+        setState(() {
+          dropdownValue = value!;
+        });
+      },
+      items: listSexo.map<DropdownMenuItem<String>>((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value),
+        );
+      }).toList(),
+    );
+  }
+}
+
+class btnIdade extends StatefulWidget {
+  const btnIdade({super.key});
+
+  @override
+  State<btnIdade> createState() => _btnIdadeState();
+}
+
+class _btnIdadeState extends State<btnIdade> {
+  String dropdownValue = listIdade.first;
+
+  @override
+  Widget build(BuildContext context) {
+    return DropdownButton<String>(
+      value: dropdownValue,
+      icon: const Icon(Icons.arrow_drop_down_sharp),
+      elevation: 16,
+      style: const TextStyle(color: Color.fromRGBO(0, 0, 0, .8)),
+      underline: Container(
+        height: 2,
+        color: Colors.lightBlue,
+      ),
+      onChanged: (String? value) {
+        // This is called when the user selects an item.
+        setState(() {
+          dropdownValue = value!;
+        });
+      },
+      items: listIdade.map<DropdownMenuItem<String>>((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value),
+        );
+      }).toList(),
+    );
+  }
+}
+
+class btnPorte extends StatefulWidget {
+  const btnPorte({super.key});
+
+  @override
+  State<btnPorte> createState() => _btnPorteState();
+}
+
+class _btnPorteState extends State<btnPorte> {
+  String dropdownValue = listPorte.first;
+
+  @override
+  Widget build(BuildContext context) {
+    return DropdownButton<String>(
+      value: dropdownValue,
+      icon: const Icon(Icons.arrow_drop_down_sharp),
+      elevation: 16,
+      style: const TextStyle(color: Color.fromRGBO(0, 0, 0, .8)),
+      underline: Container(
+        height: 2,
+        color: Colors.lightBlue,
+      ),
+      onChanged: (String? value) {
+        // This is called when the user selects an item.
+        setState(() {
+          dropdownValue = value!;
+        });
+      },
+      items: listPorte.map<DropdownMenuItem<String>>((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value),
+        );
+      }).toList(),
+    );
+  }
+}
+
+class btnCachorro extends StatelessWidget {
+  final String texto;
+  const btnCachorro({
+    super.key,
+    required this.texto,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 10),
+      child: PhysicalModel(
+        color: Colors.white,
+        borderRadius: const BorderRadius.all(
+          Radius.circular(12),
+        ),
+        elevation: 1,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12),
+          child: TextField(
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              labelText: texto,
+              labelStyle: const TextStyle(
+                fontFamily: 'AoboshiOne',
+                color: Color.fromRGBO(0, 0, 0, .6),
+                fontSize: 16,
+              ),
             ),
           ),
         ),

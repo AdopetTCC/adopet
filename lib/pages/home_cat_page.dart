@@ -125,12 +125,16 @@ class HomeScreenCat extends StatelessWidget {
                         width: 26,
                       ),
                       ElevatedButton(
+<<<<<<< HEAD
+                        onPressed: () => {},
+=======
                         onPressed: () => Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                             builder: (context) => const HomeScreenCat(),
                           ),
                         ),
+>>>>>>> 89bf141005d491e2d66e62e59c8e48c5494edc7e
                         style: ButtonStyle(
                           padding: MaterialStateProperty.all(
                               const EdgeInsets.only(
@@ -200,20 +204,20 @@ class HomeScreenCat extends StatelessWidget {
               height: 20,
             ),
             const CardAnimalFav(
-              animalfav: 'images/babidi.jpg',
+              animalfav: './assets/images/babidi.jpg',
               imgDonofav: './assets/images/sandro.png',
               localizacaofav: "Santa Bárbara d'Oeste",
               nomeAnimalfav: 'Babidi',
             ),
             const CardAnimal(
-              animal: 'images/branquinha.jpg',
-              imgDono: 'images/cara2.jpg',
+              animal: './assets/images/branquinha.jpg',
+              imgDono: './assets/images/cara2.jpg',
               localizacao: 'Americana',
               nomeAnimal: 'Branquinha',
             ),
             const CardAnimalFav(
-              animalfav: 'images/januario.jpeg',
-              imgDonofav: 'images/cara2.jpg',
+              animalfav: './assets/images/januario.jpeg',
+              imgDonofav: './assets/images/cara2.jpg',
               localizacaofav: 'Americana',
               nomeAnimalfav: 'Januário',
             ),

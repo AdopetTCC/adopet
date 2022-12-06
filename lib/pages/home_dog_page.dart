@@ -162,12 +162,16 @@ class HomeScreenDog extends StatelessWidget {
                         width: 26,
                       ),
                       ElevatedButton(
+<<<<<<< HEAD
+                        onPressed: () => {},
+=======
                         onPressed: () => Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                             builder: (context) => const MainDogScreen(),
                           ),
                         ),
+>>>>>>> 89bf141005d491e2d66e62e59c8e48c5494edc7e
                         style: ButtonStyle(
                           padding: MaterialStateProperty.all(
                               const EdgeInsets.only(
@@ -202,20 +206,20 @@ class HomeScreenDog extends StatelessWidget {
               height: 20,
             ),
             const CardAnimal(
-              animal: 'images/pacoca.jpg',
-              imgDono: 'images/mulher1.jpg',
+              animal: './assets/images/pacoca.jpg',
+              imgDono: './assets/images/mulher1.jpg',
               localizacao: 'Americana',
               nomeAnimal: 'Paçoca',
             ),
             const CardAnimalFav(
-              animalfav: 'images/malhado.jpg',
-              imgDonofav: 'images/mulher2.jpg',
+              animalfav: './assets/images/malhado.jpg',
+              imgDonofav: './assets/images/mulher2.jpg',
               localizacaofav: 'Americana',
               nomeAnimalfav: 'Malhado',
             ),
             const CardAnimal(
-              animal: 'images/luke.png',
-              imgDono: 'images/cara1.jpg',
+              animal: './assets/images/luke.png',
+              imgDono: './assets/images/cara1.jpg',
               localizacao: 'Nova Odessa',
               nomeAnimal: 'Luke',
             ),

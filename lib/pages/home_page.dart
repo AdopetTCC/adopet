@@ -87,12 +87,16 @@ class HomeScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ElevatedButton(
+<<<<<<< HEAD
+                          onPressed: () => {},
+=======
                           onPressed: () => Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
                               builder: (context) => const MainScreen(),
                             ),
                           ),
+>>>>>>> 89bf141005d491e2d66e62e59c8e48c5494edc7e
                           style: ButtonStyle(
                             padding: MaterialStateProperty.all(
                               const EdgeInsets.only(
@@ -202,38 +206,38 @@ class HomeScreen extends StatelessWidget {
                 height: 20,
               ),
               const CardAnimalFav(
-                animalfav: 'images/babidi.jpg',
+                animalfav: './assets/images/babidi.jpg',
                 imgDonofav: './assets/images/sandro.png',
                 localizacaofav: "Santa Bárbara d'Oeste",
                 nomeAnimalfav: 'Babidi',
               ),
               const CardAnimal(
-                animal: 'images/pacoca.jpg',
-                imgDono: 'images/mulher1.jpg',
+                animal: './assets/images/pacoca.jpg',
+                imgDono: './assets/images/mulher1.jpg',
                 localizacao: 'Americana',
                 nomeAnimal: 'Paçoca',
               ),
               const CardAnimalFav(
-                animalfav: 'images/malhado.jpg',
-                imgDonofav: 'images/mulher2.jpg',
+                animalfav: './assets/images/malhado.jpg',
+                imgDonofav: './assets/images/mulher2.jpg',
                 localizacaofav: 'Americana',
                 nomeAnimalfav: 'Malhado',
               ),
               const CardAnimal(
-                animal: 'images/branquinha.jpg',
-                imgDono: 'images/cara2.jpg',
+                animal: './assets/images/branquinha.jpg',
+                imgDono: './assets/images/cara2.jpg',
                 localizacao: 'Americana',
                 nomeAnimal: 'Branquinha',
               ),
               const CardAnimal(
-                animal: 'images/luke.png',
-                imgDono: 'images/cara1.jpg',
+                animal: './assets/images/luke.png',
+                imgDono: './assets/images/cara1.jpg',
                 localizacao: 'Nova Odessa',
                 nomeAnimal: 'Luke',
               ),
               const CardAnimalFav(
-                animalfav: 'images/januario.jpeg',
-                imgDonofav: 'images/cara2.jpg',
+                animalfav: './assets/images/januario.jpeg',
+                imgDonofav: './assets/images/cara2.jpg',
                 localizacaofav: 'Americana',
                 nomeAnimalfav: 'Januário',
               ),
