@@ -1,5 +1,3 @@
-import 'package:adopet/pages/home_dog_page.dart';
-import 'package:adopet/pages/home_page.dart';
 import 'package:adopet/screens_perfil/main_dog_screen.dart';
 import 'package:adopet/screens_perfil/main_screen.dart';
 import 'package:flutter/material.dart';
@@ -87,7 +85,7 @@ class HomeScreenCat extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       ElevatedButton(
-                        onPressed: () => Navigator.push(
+                        onPressed: () => Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                             builder: (context) => const MainScreen(),
@@ -127,7 +125,7 @@ class HomeScreenCat extends StatelessWidget {
                         width: 26,
                       ),
                       ElevatedButton(
-                        onPressed: () => Navigator.push(
+                        onPressed: () => Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                             builder: (context) => const HomeScreenCat(),
@@ -162,7 +160,7 @@ class HomeScreenCat extends StatelessWidget {
                         width: 26,
                       ),
                       ElevatedButton(
-                        onPressed: () => Navigator.push(
+                        onPressed: () => Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                             builder: (context) => const MainDogScreen(),

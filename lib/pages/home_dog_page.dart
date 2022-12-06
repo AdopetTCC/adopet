@@ -87,7 +87,7 @@ class HomeScreenDog extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       ElevatedButton(
-                        onPressed: () => Navigator.push(
+                        onPressed: () => Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                             builder: (context) => const MainScreen(),
@@ -127,7 +127,7 @@ class HomeScreenDog extends StatelessWidget {
                         width: 26,
                       ),
                       ElevatedButton(
-                        onPressed: () => Navigator.push(
+                        onPressed: () => Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                             builder: (context) => const MainCatScreen(),
@@ -162,7 +162,7 @@ class HomeScreenDog extends StatelessWidget {
                         width: 26,
                       ),
                       ElevatedButton(
-                        onPressed: () => Navigator.push(
+                        onPressed: () => Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                             builder: (context) => const MainDogScreen(),
