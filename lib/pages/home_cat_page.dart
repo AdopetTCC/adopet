@@ -1,5 +1,3 @@
-import 'package:adopet/pages/home_dog_page.dart';
-import 'package:adopet/pages/home_page.dart';
 import 'package:adopet/screens_perfil/main_dog_screen.dart';
 import 'package:adopet/screens_perfil/main_screen.dart';
 import 'package:flutter/material.dart';
@@ -127,7 +125,16 @@ class HomeScreenCat extends StatelessWidget {
                         width: 26,
                       ),
                       ElevatedButton(
+<<<<<<< HEAD
                         onPressed: () => {},
+=======
+                        onPressed: () => Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const HomeScreenCat(),
+                          ),
+                        ),
+>>>>>>> 89bf141005d491e2d66e62e59c8e48c5494edc7e
                         style: ButtonStyle(
                           padding: MaterialStateProperty.all(
                               const EdgeInsets.only(

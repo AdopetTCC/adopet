@@ -1,8 +1,5 @@
-import 'package:adopet/pages/perfil_page.dart';
-import 'package:adopet/screens_perfil/animal_screen.dart';
 import 'package:adopet/providers/user_provider.dart';
-import 'package:adopet/screens_perfil/Choose_screen.dart';
-import 'package:adopet/screens_perfil/main_screen.dart';
+import 'package:adopet/screens_perfil/animal_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -77,7 +74,7 @@ class _MyAppState extends State<MyApp> {
               ),
             ),
           ),
-          home: const MainScreen()
+          home: const AnimalScreen()
           //widget.showHome ? const LoginScreen() : const OnboardScreen(),
           ),
     );
