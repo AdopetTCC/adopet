@@ -21,32 +21,42 @@ class ChooseScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
       ),
       child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.transparent,
-          disabledForegroundColor: Colors.transparent.withOpacity(0.38),
-          disabledBackgroundColor: Colors.transparent.withOpacity(0.12),
-          shadowColor: Colors.transparent,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15), // <-- Radius
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.transparent,
+            disabledForegroundColor: Colors.transparent.withOpacity(0.38),
+            disabledBackgroundColor: Colors.transparent.withOpacity(0.12),
+            shadowColor: Colors.transparent,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15), // <-- Radius
+            ),
+            minimumSize: const Size(298, 67),
           ),
-          minimumSize: const Size(298, 67),
-        ),
-        onPressed: () => Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const RegisterScreen(),
-          ),
-        ),
-        child: const Text(
-          "Pessoa Comum",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-              fontSize: 20,
-              color: Colors.white,
-              fontFamily: 'AoboshiOne',
-              fontWeight: FontWeight.bold),
-        ),
-      ),
+          onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const RegisterScreen(),
+                ),
+              ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: Column(
+              children: [
+                Icon(
+                  Icons.person,
+                  size: 180,
+                ),
+                Text(
+                  "Pessoa Comum",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontFamily: 'AoboshiOne',
+                      fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+          )),
     );
 
     final ongregisterButton = Container(
@@ -62,32 +72,42 @@ class ChooseScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
       ),
       child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.transparent,
-          disabledForegroundColor: Colors.transparent.withOpacity(0.38),
-          disabledBackgroundColor: Colors.transparent.withOpacity(0.12),
-          shadowColor: Colors.transparent,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15), // <-- Radius
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.transparent,
+            disabledForegroundColor: Colors.transparent.withOpacity(0.38),
+            disabledBackgroundColor: Colors.transparent.withOpacity(0.12),
+            shadowColor: Colors.transparent,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15), // <-- Radius
+            ),
+            minimumSize: const Size(298, 67),
           ),
-          minimumSize: const Size(298, 67),
-        ),
-        onPressed: () => Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const OngRegisterScreen(),
-          ),
-        ),
-        child: const Text(
-          "ONG",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-              fontSize: 20,
-              color: Colors.white,
-              fontFamily: 'AoboshiOne',
-              fontWeight: FontWeight.bold),
-        ),
-      ),
+          onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const OngRegisterScreen(),
+                ),
+              ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: Column(
+              children: [
+                Icon(
+                  Icons.home_work_rounded,
+                  size: 180,
+                ),
+                Text(
+                  "ONG",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontFamily: 'AoboshiOne',
+                      fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+          )),
     );
 
     final cancelButton = Container(
@@ -162,29 +182,25 @@ class ChooseScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-            child: registerButton,
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-            child: ongregisterButton,
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-            child: cancelButton,
-          ),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+              child: registerButton,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+              child: ongregisterButton,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+              child: cancelButton,
+            ),
+          ],
+        ),
       ),
     );
   }
