@@ -211,8 +211,14 @@ class _Configuracoes extends State<Configuracoes> {
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  color: Colors.white,
-                  height: MediaQuery.of(context).size.height / 2,
+                  height: MediaQuery.of(context).size.height / 1.5,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(30),
+                      topRight: Radius.circular(30),
+                    ),
+                  ),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 15,

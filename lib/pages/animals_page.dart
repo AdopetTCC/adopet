@@ -1,10 +1,11 @@
 import 'dart:io';
-import 'package:adopet/screens_perfil/main_post_screen.dart';
 import 'package:path/path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
+
+import '../screens_perfil/main_post_screen.dart';
 import '../utils/utils.dart';
 
 class Animais extends StatefulWidget {
@@ -198,8 +199,14 @@ class _Animais extends State<Animais> {
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  color: Colors.white,
-                  height: MediaQuery.of(context).size.height / 1,
+                  height: MediaQuery.of(context).size.height / 1.5,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(30),
+                      topRight: Radius.circular(30),
+                    ),
+                  ),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 15,
@@ -211,6 +218,18 @@ class _Animais extends State<Animais> {
                           padding: const EdgeInsets.symmetric(horizontal: 5),
                           child: Column(
                             children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 20),
+                                child: Text(
+                                  'Mostre o Pet!',
+                                  style: TextStyle(
+                                    fontFamily: 'AoboshiOne',
+                                    color: Color.fromRGBO(0, 0, 0, 1),
+                                    fontSize: 25,
+                                  ),
+                                ),
+                              ),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -268,7 +287,7 @@ class _Animais extends State<Animais> {
                                         hintStyle: TextStyle(
                                           fontFamily: 'AoboshiOne',
                                           color: Color.fromRGBO(0, 0, 0, .6),
-                                          fontSize: 15,
+                                          fontSize: 18,
                                         ),
                                         fillColor: Colors.white30,
                                         filled: true,
@@ -297,7 +316,7 @@ class _Animais extends State<Animais> {
                                         hintStyle: TextStyle(
                                           fontFamily: 'AoboshiOne',
                                           color: Color.fromRGBO(0, 0, 0, .6),
-                                          fontSize: 15,
+                                          fontSize: 18,
                                         ),
                                         fillColor: Colors.white30,
                                         filled: true,
@@ -330,12 +349,7 @@ class _Animais extends State<Animais> {
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(0, 45),
               ),
-              onPressed: () => Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const MainPostScreen(),
-                ),
-              ),
+              onPressed: () => {},
               child: const Text(
                 'Publicar',
                 style: TextStyle(

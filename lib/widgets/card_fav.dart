@@ -128,7 +128,7 @@ class CardAnimalFav extends StatelessWidget {
                     ),
                     child: const Center(
                       child: Icon(
-                        Icons.favorite_rounded,
+                        Icons.favorite_border,
                         color: Colors.red,
                       ),
                     ),

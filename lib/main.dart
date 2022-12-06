@@ -80,8 +80,8 @@ class _MyAppState extends State<MyApp> {
             ),
           ),
         ),
-        // home: widget.showHome ? const LoginScreen() : const OnboardScreen(),
-        home: LoginScreen(),
+        home: widget.showHome ? const LoginScreen() : const OnboardScreen(),
+        // home: MainScreen(),
       ),
     );
   }

@@ -42,10 +42,6 @@ class _MainDogScreenState extends State<MainPostScreen> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite_rounded),
-            label: 'Favoritos',
-          ),
-          BottomNavigationBarItem(
             icon: Icon(Icons.pets_rounded),
             label: 'Animais',
           ),

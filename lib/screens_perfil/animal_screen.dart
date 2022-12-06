@@ -22,7 +22,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
               width: MediaQuery.of(context).size.width,
               height: 450,
               child: const Image(
-                image: AssetImage('images/babidi.jpg'),
+                image: AssetImage('./assets/images/babidi.jpg'),
                 alignment: Alignment.topCenter,
                 fit: BoxFit.cover,
               ),
@@ -312,7 +312,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                               textAlign: TextAlign.justify,
                               text: TextSpan(
                                 text:
-                                    'Babidi é um cachorro muito arteiro mas que tem um grande coração, ama brincar com crianças e adora uma atenção...',
+                                    'Babidi é um gato muito arteiro mas que tem um grande coração, ama brincar com crianças e adora uma atenção...',
                                 style: const TextStyle(
                                   color: Color(0xFF70717B),
                                   fontFamily: 'AoboshiOne',
@@ -337,36 +337,6 @@ class _AnimalScreenState extends State<AnimalScreen> {
                       ),
                       const SizedBox(
                         height: 35,
-                      ),
-                      GestureDetector(
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 137, vertical: 18),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              gradient: const LinearGradient(
-                                  begin: Alignment.topCenter,
-                                  end: Alignment.bottomCenter,
-                                  colors: [
-                                    Color(0xFFF64ADEF),
-                                    Color(0xFF3198F4),
-                                  ])),
-                          child: const Text(
-                            'Contatar',
-                            style: TextStyle(
-                              fontFamily: 'AoboshiOne',
-                              color: Colors.white,
-                              fontSize: 20,
-                              decoration: TextDecoration.none,
-                            ),
-                          ),
-                        ),
-                        onTap: () => Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const Configuracoes(),
-                          ),
-                        ),
                       ),
                     ],
                   ),

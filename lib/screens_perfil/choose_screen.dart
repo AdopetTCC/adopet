@@ -154,23 +154,27 @@ class ChooseScreen extends StatelessWidget {
     return Scaffold(
       appBar: appBarDefault(),
       body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-              child: registerButton,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-              child: ongregisterButton,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-              child: cancelButton,
-            ),
-          ],
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width,
+          child: Column(
+            children: [
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                child: registerButton,
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                child: ongregisterButton,
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                child: cancelButton,
+              ),
+            ],
+          ),
         ),
       ),
     );

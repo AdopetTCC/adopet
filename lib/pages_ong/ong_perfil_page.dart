@@ -1,4 +1,7 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'dart:io';
+import 'package:adopet/utils/utils.dart';
 import 'package:path/path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -194,7 +197,7 @@ class _Configuracoes extends State<Configuracoes> {
                 const Padding(
                   padding: EdgeInsets.only(top: 20),
                   child: Text(
-                    'Teuku Myadora',
+                    'Adopet',
                     style: TextStyle(
                       fontSize: 35,
                       letterSpacing: 1,
@@ -203,8 +206,134 @@ class _Configuracoes extends State<Configuracoes> {
                     ),
                   ),
                 ),
+                const SizedBox(
+                  height: 25,
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height / 1.5,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(30),
+                      topRight: Radius.circular(30),
+                    ),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 15,
+                      vertical: 5,
+                    ),
+                    child: Column(
+                      children: [
+                        BtnPerfil(nome: 'Alterar Nome'),
+                        BtnPerfil(nome: 'Alterar Senha'),
+                        BtnPerfil(nome: 'Notificações'),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        Text(
+                          'Sobre Mim',
+                          style: TextStyle(
+                            fontFamily: 'AoboshiOne',
+                            color: Colors.black,
+                            fontSize: 18,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Material(
+                          elevation: 4,
+                          shadowColor: Colors.grey,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: TextFormField(
+                            minLines: 3,
+                            maxLines: 8,
+                            decoration: InputDecoration(
+                              hintStyle: const TextStyle(
+                                color: Colors.black54,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              fillColor: Colors.white30,
+                              filled: true,
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                                borderSide: BorderSide.none,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
+          ),
+        ),
+        bottomNavigationBar: Container(
+          color: Colors.white,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(0, 45),
+              ),
+              onPressed: () {
+                showSnackBar(context, 'Perfil atualizado!');
+              },
+              child: Text(
+                'Atualizar',
+                style: TextStyle(
+                  fontFamily: 'AoboshiOne',
+                  color: Colors.white,
+                  fontSize: 18,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class BtnPerfil extends StatelessWidget {
+  final String nome;
+
+  const BtnPerfil({super.key, required this.nome});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 10),
+      child: SizedBox(
+        height: 50,
+        child: ElevatedButton(
+          onPressed: () => {},
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Color.fromRGBO(255, 255, 255, 0.9),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                nome,
+                style: const TextStyle(
+                  fontFamily: 'AoboshiOne',
+                  color: Colors.black,
+                  fontSize: 16,
+                ),
+              ),
+              const Icon(
+                Icons.navigate_next_rounded,
+                color: Colors.black,
+                size: 30,
+              )
+            ],
           ),
         ),
       ),
