@@ -4,6 +4,7 @@
 import 'package:adopet/resources/auth_methods.dart';
 import 'package:adopet/widgets/text_field_input.dart';
 import 'package:flutter/material.dart';
+import 'package:adopet/screens_ong/ongmain_screen.dart';
 
 class OngRegisterScreen extends StatefulWidget {
   const OngRegisterScreen({Key? key}) : super(key: key);
@@ -69,6 +70,12 @@ class _OngRegistrationScreenState extends State<OngRegisterScreen> {
             telefone: _telController.text,
           );
           print(res);
+
+          Navigator.of(context).pushReplacement(
+            MaterialPageRoute(
+              builder: (_) => const MainScreen(),
+            ),
+          );
         },
         child: const Text(
           "Cadastrar",

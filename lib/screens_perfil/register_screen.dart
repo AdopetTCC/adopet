@@ -4,6 +4,7 @@
 import 'package:adopet/resources/auth_methods.dart';
 import 'package:adopet/widgets/text_field_input.dart';
 import 'package:flutter/material.dart';
+import 'package:adopet/screens_perfil/main_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -65,6 +66,12 @@ class _RegistrationScreenState extends State<RegisterScreen> {
               name: _nameController.text,
               telefone: _telController.text);
           print(res);
+
+          Navigator.of(context).pushReplacement(
+            MaterialPageRoute(
+              builder: (_) => const MainScreen(),
+            ),
+          );
         },
         child: const Text(
           "Cadastrar",
