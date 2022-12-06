@@ -21,32 +21,42 @@ class ChooseScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
       ),
       child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.transparent,
-          disabledForegroundColor: Colors.transparent.withOpacity(0.38),
-          disabledBackgroundColor: Colors.transparent.withOpacity(0.12),
-          shadowColor: Colors.transparent,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15), // <-- Radius
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.transparent,
+            disabledForegroundColor: Colors.transparent.withOpacity(0.38),
+            disabledBackgroundColor: Colors.transparent.withOpacity(0.12),
+            shadowColor: Colors.transparent,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15), // <-- Radius
+            ),
+            minimumSize: const Size(298, 67),
           ),
-          minimumSize: const Size(298, 67),
-        ),
-        onPressed: () => Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const RegisterScreen(),
-          ),
-        ),
-        child: const Text(
-          "Pessoa Comum",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-              fontSize: 20,
-              color: Colors.white,
-              fontFamily: 'AoboshiOne',
-              fontWeight: FontWeight.bold),
-        ),
-      ),
+          onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const RegisterScreen(),
+                ),
+              ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: Column(
+              children: [
+                Icon(
+                  Icons.person,
+                  size: 180,
+                ),
+                Text(
+                  "Pessoa Comum",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontFamily: 'AoboshiOne',
+                      fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+          )),
     );
 
     final ongregisterButton = Container(
@@ -62,32 +72,42 @@ class ChooseScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
       ),
       child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.transparent,
-          disabledForegroundColor: Colors.transparent.withOpacity(0.38),
-          disabledBackgroundColor: Colors.transparent.withOpacity(0.12),
-          shadowColor: Colors.transparent,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15), // <-- Radius
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.transparent,
+            disabledForegroundColor: Colors.transparent.withOpacity(0.38),
+            disabledBackgroundColor: Colors.transparent.withOpacity(0.12),
+            shadowColor: Colors.transparent,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15), // <-- Radius
+            ),
+            minimumSize: const Size(298, 67),
           ),
-          minimumSize: const Size(298, 67),
-        ),
-        onPressed: () => Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const OngRegisterScreen(),
-          ),
-        ),
-        child: const Text(
-          "ONG",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-              fontSize: 20,
-              color: Colors.white,
-              fontFamily: 'AoboshiOne',
-              fontWeight: FontWeight.bold),
-        ),
-      ),
+          onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const OngRegisterScreen(),
+                ),
+              ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: Column(
+              children: [
+                Icon(
+                  Icons.home_work_rounded,
+                  size: 180,
+                ),
+                Text(
+                  "ONG",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontFamily: 'AoboshiOne',
+                      fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+          )),
     );
 
     final cancelButton = Container(
@@ -113,7 +133,7 @@ class ChooseScreen extends StatelessWidget {
           ),
           minimumSize: const Size(298, 67),
         ),
-        onPressed: () => Navigator.pushReplacement(
+        onPressed: () => Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) => const LoginScreen(),
@@ -132,25 +152,52 @@ class ChooseScreen extends StatelessWidget {
     );
 
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 140,
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(40),
-                bottomRight: Radius.circular(40)),
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                Color(0xFF5CB2FF),
-                Color(0xFF0074FC),
-              ],
+      appBar: appBarDefault(),
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+              child: registerButton,
             ),
-          ),
-          child: const Center(
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+              child: ongregisterButton,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+              child: cancelButton,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+AppBar appBarDefault() {
+  return AppBar(
+    toolbarHeight: 100,
+    elevation: 0,
+    backgroundColor: Colors.transparent,
+    flexibleSpace: Container(
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(40), bottomRight: Radius.circular(40)),
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Color(0xFF5CB2FF),
+            Color(0xFF0074FC),
+          ],
+        ),
+      ),
+      child: Stack(
+        children: [
+          const Center(
             child: Text(
               'Adopet',
               style: TextStyle(
@@ -160,32 +207,18 @@ class ChooseScreen extends StatelessWidget {
               ),
             ),
           ),
-        ),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-            child: registerButton,
+          Positioned(
+            top: -8,
+            left: -46,
+            child: Image.asset('./assets/icons/pata1.png'),
           ),
-          const SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-            child: ongregisterButton,
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-            child: cancelButton,
+          Positioned(
+            bottom: 45,
+            right: -50,
+            child: Image.asset('./assets/icons/pata4.png'),
           ),
         ],
       ),
-    );
-  }
+    ),
+  );
 }

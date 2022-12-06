@@ -1,8 +1,11 @@
 import 'package:adopet/providers/user_provider.dart';
 import 'package:adopet/screens_perfil/animal_screen.dart';
+import 'package:adopet/screens_perfil/choose_screen.dart';
 import 'package:adopet/screens_perfil/login_screen.dart';
 import 'package:adopet/screens_perfil/main_screen.dart';
 import 'package:adopet/screens_perfil/onboarding_screen.dart';
+import 'package:adopet/screens_perfil/ongregister_screen.dart';
+import 'package:adopet/screens_perfil/register_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -77,7 +80,8 @@ class _MyAppState extends State<MyApp> {
             ),
           ),
         ),
-        home: widget.showHome ? const LoginScreen() : const OnboardScreen(),
+        // home: widget.showHome ? const LoginScreen() : const OnboardScreen(),
+        home: LoginScreen(),
       ),
     );
   }
