@@ -1,11 +1,12 @@
 import 'package:adopet/screens_perfil/main_cat_screen.dart';
 import 'package:adopet/screens_perfil/main_dog_screen.dart';
+import 'package:adopet/screens_perfil/main_screen.dart';
 import 'package:adopet/widgets/card_fav.dart';
 import 'package:flutter/material.dart';
 import '../widgets/card.dart';
 
-class HomePostScreen extends StatelessWidget {
-  const HomePostScreen({
+class HomeScreenFav extends StatelessWidget {
+  const HomeScreenFav({
     Key? key,
   }) : super(key: key);
 
@@ -194,12 +195,6 @@ class HomePostScreen extends StatelessWidget {
               ),
               const SizedBox(
                 height: 20,
-              ),
-              const CardAnimal(
-                animal: './assets/images/lilico.png',
-                imgDono: './assets/images/perfil.png',
-                localizacao: "Americana",
-                nomeAnimal: 'Lilico',
               ),
               const CardAnimalFav(
                 animalfav: './assets/images/babidi.jpg',

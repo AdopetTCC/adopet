@@ -1,5 +1,3 @@
-import 'package:adopet/pages_ong/ong_dog_page.dart';
-import 'package:adopet/pages_ong/ong_home_page.dart';
 import 'package:adopet/screens_ong/ong_dog_screen.dart';
 import 'package:adopet/screens_ong/ongmain_screen.dart';
 import 'package:flutter/material.dart';

@@ -1,23 +1,26 @@
-import 'package:adopet/pages_ong/ong_animals_page.dart';
-import 'package:adopet/pages_ong/ong_perfil_page.dart';
-import 'package:adopet/pages_ong/ong_favorites_page.dart';
+import 'package:adopet/pages/animals_page.dart';
+import 'package:adopet/pages/home_dog_page.dart';
+import 'package:adopet/pages/home_fav_page.dart';
+import 'package:adopet/pages/home_post_page.dart';
+import 'package:adopet/pages/perfil_page.dart';
+import 'package:adopet/pages/favorites_page.dart';
 import 'package:flutter/material.dart';
-import '../pages_ong/ong_home_page.dart';
 
-class MainScreen extends StatefulWidget {
-  const MainScreen({Key? key}) : super(key: key);
+class MainFavScreen extends StatefulWidget {
+  const MainFavScreen({Key? key}) : super(key: key);
 
   static const List<Widget> _widgetOptions = <Widget>[
-    HomeScreen(),
+    HomeScreenFav(),
+    Favoritos(),
     Animais(),
     Configuracoes(),
   ];
 
   @override
-  State<MainScreen> createState() => _MainScreenState();
+  State<MainFavScreen> createState() => _MainFavScreenState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _MainFavScreenState extends State<MainFavScreen> {
   int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
@@ -30,7 +33,7 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: MainScreen._widgetOptions.elementAt(_selectedIndex),
+        child: MainFavScreen._widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
         elevation: 0,
@@ -38,6 +41,10 @@ class _MainScreenState extends State<MainScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home_rounded),
             label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite_rounded),
+            label: 'Favoritos',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.pets_rounded),
