@@ -31,7 +31,7 @@ class ChooseScreen extends StatelessWidget {
           ),
           minimumSize: const Size(298, 67),
         ),
-        onPressed: () => Navigator.push(
+        onPressed: () => Navigator.pushReplacement(
           context,
           MaterialPageRoute(
             builder: (context) => const RegisterScreen(),
@@ -72,7 +72,7 @@ class ChooseScreen extends StatelessWidget {
           ),
           minimumSize: const Size(298, 67),
         ),
-        onPressed: () => Navigator.push(
+        onPressed: () => Navigator.pushReplacement(
           context,
           MaterialPageRoute(
             builder: (context) => const OngRegisterScreen(),
@@ -113,7 +113,7 @@ class ChooseScreen extends StatelessWidget {
           ),
           minimumSize: const Size(298, 67),
         ),
-        onPressed: () => Navigator.push(
+        onPressed: () => Navigator.pushReplacement(
           context,
           MaterialPageRoute(
             builder: (context) => const LoginScreen(),
