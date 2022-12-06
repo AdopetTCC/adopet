@@ -22,7 +22,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
               width: MediaQuery.of(context).size.width,
               height: 450,
               child: const Image(
-                image: AssetImage('./assets/images/cat.png'),
+                image: AssetImage('images/babidi.jpg'),
                 alignment: Alignment.topCenter,
                 fit: BoxFit.cover,
               ),
@@ -48,22 +48,6 @@ class _AnimalScreenState extends State<AnimalScreen> {
                       onPressed: () => Navigator.of(context).pop(),
                     ),
                   ),
-                  SizedBox(
-                    height: 50,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(18),
-                        ),
-                        backgroundColor: Colors.white,
-                      ),
-                      child: const Icon(
-                        Icons.more_horiz_rounded,
-                        color: Color(0xFF03063A),
-                      ),
-                      onPressed: () {},
-                    ),
-                  ),
                 ],
               ),
             )
@@ -81,7 +65,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                   color: Colors.white,
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 40, right: 25, left: 25),
+                  padding: const EdgeInsets.only(top: 40, right: 27, left: 27),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -89,15 +73,18 @@ class _AnimalScreenState extends State<AnimalScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text(
-                            'Lilico',
-                            style: TextStyle(
-                              color: Color(0xFF373737),
-                              fontFamily: 'AoboshiOne',
-                              fontSize: 26,
-                              decoration: TextDecoration.none,
+                          const Padding(
+                            padding: EdgeInsets.only(left: 2),
+                            child: Text(
+                              'Babidi',
+                              style: TextStyle(
+                                color: Color(0xFF373737),
+                                fontFamily: 'AoboshiOne',
+                                fontSize: 26,
+                                decoration: TextDecoration.none,
+                              ),
+                              textAlign: TextAlign.start,
                             ),
-                            textAlign: TextAlign.start,
                           ),
                           Positioned(
                             top: 20,
@@ -125,11 +112,8 @@ class _AnimalScreenState extends State<AnimalScreen> {
                             Icons.location_pin,
                             color: Color(0xFF5AA9EF),
                           ),
-                          SizedBox(
-                            width: 2,
-                          ),
                           Text(
-                            'Cidade Jardim, Americana (5km)',
+                            "Santa Bárbara d'Oeste",
                             style: TextStyle(
                               color: Color(0xFF70717B),
                               fontFamily: 'AoboshiOne',
@@ -141,7 +125,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                         ],
                       ),
                       const SizedBox(
-                        height: 35,
+                        height: 26,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -204,7 +188,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                               child: Column(
                                 children: const [
                                   Text(
-                                    'idade',
+                                    'Idade',
                                     style: TextStyle(
                                       color: Color(0xFF70717B),
                                       fontFamily: 'AoboshiOne',
@@ -273,7 +257,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                         ],
                       ),
                       const SizedBox(
-                        height: 38,
+                        height: 30,
                       ),
                       Row(
                         children: [
@@ -292,7 +276,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                             ),
                           ),
                           const SizedBox(
-                            width: 5,
+                            width: 9,
                           ),
                           RichText(
                             text: const TextSpan(
@@ -314,51 +298,12 @@ class _AnimalScreenState extends State<AnimalScreen> {
                               ],
                             ),
                           ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 39),
-                            child: SizedBox(
-                              height: 50,
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(18),
-                                  ),
-                                  backgroundColor: Colors.white,
-                                ),
-                                onPressed: () {},
-                                child: const Icon(
-                                  Icons.chat,
-                                  color: Colors.blue,
-                                ),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(right: 20, left: 15),
-                            child: SizedBox(
-                              height: 50,
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(18),
-                                  ),
-                                  backgroundColor: Colors.white,
-                                ),
-                                onPressed: () {},
-                                child: const Icon(
-                                  Icons.call,
-                                  color: Colors.red,
-                                ),
-                              ),
-                            ),
-                          ),
                         ],
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 14, right: 50),
+                        padding: const EdgeInsets.only(
+                          top: 9,
+                        ),
                         child: Column(
                           children: [
                             RichText(
@@ -367,7 +312,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                               textAlign: TextAlign.justify,
                               text: TextSpan(
                                 text:
-                                    'Lilico é um cachorro muito arteiro mas que tem um grande coração, ama brincar com crianças e adora...',
+                                    'Babidi é um cachorro muito arteiro mas que tem um grande coração, ama brincar com crianças e adora uma atenção...',
                                 style: const TextStyle(
                                   color: Color(0xFF70717B),
                                   fontFamily: 'AoboshiOne',
@@ -376,7 +321,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                                 ),
                                 children: [
                                   TextSpan(
-                                      text: 'Ver Mais',
+                                      text: '  Ver Mais',
                                       style: const TextStyle(
                                         color: Color(0xFFFDD153),
                                         fontFamily: 'AoboshiOne',
@@ -396,7 +341,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                       GestureDetector(
                         child: Container(
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 139, vertical: 18),
+                              horizontal: 137, vertical: 18),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
                               gradient: const LinearGradient(
@@ -416,7 +361,7 @@ class _AnimalScreenState extends State<AnimalScreen> {
                             ),
                           ),
                         ),
-                        onTap: () => Navigator.push(
+                        onTap: () => Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                             builder: (context) => const Configuracoes(),

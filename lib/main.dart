@@ -1,8 +1,8 @@
-import 'package:adopet/pages/perfil_page.dart';
-import 'package:adopet/screens_perfil/animal_screen.dart';
 import 'package:adopet/providers/user_provider.dart';
-import 'package:adopet/screens_perfil/Choose_screen.dart';
+import 'package:adopet/screens_perfil/animal_screen.dart';
+import 'package:adopet/screens_perfil/login_screen.dart';
 import 'package:adopet/screens_perfil/main_screen.dart';
+import 'package:adopet/screens_perfil/onboarding_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -58,28 +58,27 @@ class _MyAppState extends State<MyApp> {
         ),
       ],
       child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Adopet',
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-            textTheme: const TextTheme(
-              headline1: TextStyle(
-                color: Color.fromARGB(255, 255, 255, 255),
-                fontFamily: 'AoboshiOne',
-                fontSize: 22,
-                fontWeight: FontWeight.w700,
-              ),
-              headline2: TextStyle(
-                color: Color.fromARGB(255, 255, 255, 255),
-                fontFamily: 'AoboshiOne',
-                fontSize: 17,
-                fontWeight: FontWeight.w300,
-              ),
+        debugShowCheckedModeBanner: false,
+        title: 'Adopet',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          textTheme: const TextTheme(
+            headline1: TextStyle(
+              color: Color.fromARGB(255, 255, 255, 255),
+              fontFamily: 'AoboshiOne',
+              fontSize: 22,
+              fontWeight: FontWeight.w700,
+            ),
+            headline2: TextStyle(
+              color: Color.fromARGB(255, 255, 255, 255),
+              fontFamily: 'AoboshiOne',
+              fontSize: 17,
+              fontWeight: FontWeight.w300,
             ),
           ),
-          home: const MainScreen()
-          //widget.showHome ? const LoginScreen() : const OnboardScreen(),
-          ),
+        ),
+        home: widget.showHome ? const LoginScreen() : const OnboardScreen(),
+      ),
     );
   }
 }
